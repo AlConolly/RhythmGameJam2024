@@ -1,0 +1,4 @@
+repository "RhythmGameJam2024@GameJamProject2024@cloud"
+  path "/"
+    br "/main"
+    co "/main"
