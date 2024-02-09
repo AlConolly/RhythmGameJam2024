@@ -7,19 +7,16 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void NextScene() //used to move to next level
+    public void NextScene() // Used to move to next level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void backToMenu()
+    public void BackToMenu()
     {
         SceneManager.LoadScene("Mainmenu");
     }
-    public void levelSelect()
-    {
-        LoadLevel("level Select");
-    }
+    
     /// <summary>
     /// Suprisingly this function closes the application.
     /// </summary>

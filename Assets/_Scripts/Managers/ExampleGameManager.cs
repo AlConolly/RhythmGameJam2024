@@ -61,28 +61,12 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
         Debug.Log($"New state: {newState}");
     }
 
-    public void ChangeState(string newState)
+    /// <summary>
+    /// Resumes the game.
+    /// </summary>
+    public void ResumeGame()
     {
-        switch(newState)
-        {
-            case "Starting":
-                ChangeState(GameState.Starting);
-                break;
-            case "Playing":
-                ChangeState(GameState.Playing);
-                break;
-            case "Win":
-                ChangeState(GameState.Win);
-                break;
-            case "Lose":
-                ChangeState(GameState.Lose);
-                break;
-            case "Paused":
-                ChangeState(GameState.Paused);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
-        }
+        ChangeState(GameState.Playing);
     }
 
     private void HandleStarting() {
