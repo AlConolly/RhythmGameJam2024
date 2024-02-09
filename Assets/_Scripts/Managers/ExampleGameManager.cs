@@ -17,7 +17,6 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
     void Start()
     {
         ChangeState(GameState.Starting);
-        
     }
     private void OnEnable()
     {
@@ -51,7 +50,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
                 break;
             case GameState.Paused:
                 pauseMenu?.SetActive(true);
-                Time.timeScale = 0; //sets the movement of time to 0 in the game
+                Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -93,23 +92,20 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
         
         ChangeState(GameState.Playing);
     }
+
     private void checkPauseGame()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape)) //if you didn't press escape do nothing
-        { return; }
+        if (!Input.GetKeyDown(KeyCode.Escape)) return;
 
-        if (State != GameState.Paused)
-            ChangeState(GameState.Paused);
-        else if (State == GameState.Paused)
-            ChangeState(GameState.Playing);
+        if (State != GameState.Paused) ChangeState(GameState.Paused);
+        else ChangeState(GameState.Playing);
     }
     private void unPause(GameState gameState)
     {
-        if (gameState != GameState.Paused)
-        {
-            Time.timeScale = 1;
-            pauseMenu?.SetActive(false);
-        }
+        if (gameState == GameState.Paused) return;
+
+        Time.timeScale = 1;
+        pauseMenu?.SetActive(false);
     }
 
 }

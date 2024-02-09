@@ -14,20 +14,24 @@ public class SceneSwitcher : MonoBehaviour
 
     public void backToMenu()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Mainmenu");
     }
     public void levelSelect()
     {
         LoadLevel("level Select");
     }
+    /// <summary>
+    /// Suprisingly this function closes the application.
+    /// </summary>
     public void QuitGame()
     {
         Debug.Log("QUIT");
         Application.Quit();
     }
-/// <summary>
-/// switch to level with given name ex. LoadLevel("Level 1");
-/// </summary>
+    /// <summary>
+    /// switch to level with given name ex. LoadLevel("Level 1");
+    /// VistasFileja - "lowkey this is for lazy mfs"
+    /// </summary>
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
