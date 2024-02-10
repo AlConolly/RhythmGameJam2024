@@ -90,13 +90,16 @@ namespace RhythmEngine
         {
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
 
+            Debug.Log(State);
+
             if (State != GameState.Paused) ChangeState(GameState.Paused);
             else unPause(GameState.Playing);
         }
-        private void unPause(GameState gameState)
+        private void unPause(GameState gs) // Why are we taking an input??
         {
-            if (gameState == GameState.Paused) return;
+            if (gs == GameState.Paused) return; // Theoretically this can be removed
 
+            State = GameState.Playing;
             Time.timeScale = 1;
             pauseMenu?.SetActive(false);
             rhythmEngine.Unpause();
