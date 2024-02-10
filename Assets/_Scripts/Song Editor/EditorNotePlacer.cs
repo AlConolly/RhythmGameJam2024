@@ -5,9 +5,9 @@ namespace RhythmEngine.Examples
     /// <summary>
     /// Class responsible for getting the exact note index from the world position of the mouse.
     /// </summary>
-    public class ManiaEditorNotePlacer : MonoBehaviour
+    public class EditorNotePlacer : MonoBehaviour
     {
-        [SerializeField] private ManiaEditor ManiaEditor;
+        [SerializeField] private SongEditor songEditor;
         [SerializeField] private Transform BeatsParent;
 
         [Space]
@@ -32,16 +32,15 @@ namespace RhythmEngine.Examples
                 var currentLane = GetLaneFromWorldPos(worldPos);
                 var currentBeat = GetBeatFromWorldPos(worldPos);
 
-                ManiaEditor.ToggleNote(new Vector2Int(currentLane, currentBeat));
-                print(worldPos);
+                songEditor.ToggleNote(new Vector2Int(currentBeat, currentLane));
             }
         }
 
         private int GetLaneFromWorldPos(Vector3 worldPos)
         {
             // We don't want to place notes outside the lanes
-            if (worldPos.x < LanePositions[0] - LaneWidth / 2f) return -1;
-            if (worldPos.x > LanePositions[LanePositions.Length - 1] + LaneWidth / 2f) return -1;
+            if (worldPos.y < LanePositions[0] - LaneWidth / 2f) return -1;
+            if (worldPos.y > LanePositions[LanePositions.Length - 1] + LaneWidth / 2f) return -1;
 
             // We just look for the closest distance from the mouse to the lanes
             var lane = 0;
@@ -50,7 +49,7 @@ namespace RhythmEngine.Examples
             for (var i = 0; i < LanePositions.Length; i++)
             {
                 var lanePos = LanePositions[i];
-                var dist = Mathf.Abs(worldPos.x - lanePos); // d(A,B) = |B - A|
+                var dist = Mathf.Abs(worldPos.y - lanePos); // d(A,B) = |B - A|
 
                 if (dist < minDist)
                 {
@@ -65,10 +64,12 @@ namespace RhythmEngine.Examples
         private int GetBeatFromWorldPos(Vector3 worldPos)
         {
             // We can use the beats parent as sort of an "anchor" for the beats
-            var yPos = worldPos.y - BeatsParent.position.y;
+            var xPos = worldPos.x - BeatsParent.position.x;
             // And then we just round to the nearest beat, no need to check if it's outside the bounds because the editor will do that
-            var closestBeat = Mathf.Round(yPos / ManiaEditor.BeatSpacing) * ManiaEditor.BeatSpacing;
+            var closestBeat = Mathf.Round(xPos / songEditor.BeatSpacing) * songEditor.BeatSpacing;
+            print("Beat:" + closestBeat);
             return (int)closestBeat;
         }
     }
 }
+

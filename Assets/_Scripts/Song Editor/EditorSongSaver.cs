@@ -10,7 +10,7 @@ namespace RhythmEngine.Examples
     /// <summary>
     /// Helper class to save a mania song in the editor.
     /// </summary>
-    public static class ManiaEditorSongSaver
+    public static class EditorSongSaver
     {
         public static void Save(bool[,] notes, SimpleManiaSong songToSave)
         {
@@ -27,7 +27,7 @@ namespace RhythmEngine.Examples
             {
                 for (int lane = 0; lane < 4; lane++)
                 {
-                    if (notes[beat, lane])
+                    if (notes[lane, beat])
                     {
                         notesToSave.Add(new SimpleManiaNote
                         {
