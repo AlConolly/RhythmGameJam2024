@@ -11,7 +11,7 @@ namespace RhythmEngine.Examples
         [SerializeField] private Transform BeatsParent;
 
         [Space]
-        [SerializeField] private float[] LanePositions = { -2.25f, -0.75f, 0.75f, 2.25f }; // We need the lane positions to check if the mouse is inside any of them
+        [SerializeField] public float[] LanePositions = { -2.25f, -0.75f, 0.75f, 2.25f }; // We need the lane positions to check if the mouse is inside any of them
         [SerializeField] private float LaneWidth = 1.5f; // For checking if the mouse is outside any lanes
 
         private Camera _camera;
@@ -23,7 +23,7 @@ namespace RhythmEngine.Examples
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1)) // Right mouse
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse0)) // Right mouse for cheese, left mouse for trap
             {
                 // This could be also done by comparing screen positions, but this easier.
                 var mousePos = Input.mousePosition;
@@ -31,8 +31,9 @@ namespace RhythmEngine.Examples
 
                 var currentLane = GetLaneFromWorldPos(worldPos);
                 var currentBeat = GetBeatFromWorldPos(worldPos);
+                NoteType noteType = Input.GetKeyDown(KeyCode.Mouse1) ? NoteType.Cheese : NoteType.Obstacle;
 
-                songEditor.ToggleNote(new Vector2Int(currentBeat, currentLane));
+                songEditor.ToggleNote(new Vector2Int(currentBeat, currentLane),noteType);
             }
         }
 

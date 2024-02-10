@@ -6,12 +6,12 @@ namespace RhythmEngine.Examples
     /// <summary>
     /// This version of a Song contains all the data needed to play the mania demo.
     /// </summary>
-    //[CreateAssetMenu(fileName = "SimpleManiaSong", menuName = "RhythmEngine/Songs/Examples/SimpleManiaSong")]
+    [CreateAssetMenu(fileName = "HamoebaSong", menuName = "RhythmEngine/Songs/HamoebaSong")]
     // Feel free to uncomment the above line if you want to create more mania song assets.
     public class HamoebaSong : BeatSequencedSong
     {
         [Header("Mania Notes")]
-        public List<SimpleManiaNote> Notes = new();
+        public List<Note> Notes = new();
 
         [Header("Mania Settings")]
         [Tooltip("Time (in seconds) in which a note will lerp from the top to the bottom of the screen")]

@@ -1231,7 +1231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RhythmEngine: {fileID: 1502335008}
-  NotePrefab: {fileID: 3858487666298991635, guid: 0365443002214c641ab4ea20af50b76a, type: 3}
+  CheeseNotePrefab: {fileID: 3858487666298991635, guid: 0365443002214c641ab4ea20af50b76a, type: 3}
+  ObstaclePrefab: {fileID: 3858487666298991635, guid: 495a57d700b94c84bb86b9d6c67fc49e, type: 3}
   LanePositions:
   - -2.25
   - -0.75
@@ -2444,7 +2445,7 @@ MonoBehaviour:
   MusicSource: {fileID: 1929816977}
   OffsetInMs: 0
   PreStartTime: 2
-  SongToPlay: {fileID: 11400000, guid: bea698c9f0494f4408046a3d1a0d70d4, type: 2}
+  SongToPlay: {fileID: 11400000, guid: c675e71689a444c4ea5661e45a5e427f, type: 2}
   ManualMode: 0
 --- !u!82 &1502335009
 AudioSource:

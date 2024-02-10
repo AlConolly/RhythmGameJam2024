@@ -12,7 +12,8 @@ namespace RhythmEngine.Examples
     public class NoteManager : MonoBehaviour
     {
         [SerializeField] private RhythmEngineCore RhythmEngine;
-        [SerializeField] private Transform NotePrefab;
+        [SerializeField] private Transform CheeseNotePrefab;
+        [SerializeField] private Transform ObstaclePrefab;
 
         [Space]
         [SerializeField] private float[] LanePositions = {-2.25f, -0.75f, 0.75f, 2.25f}; // Y positions of the lanes
@@ -20,11 +21,11 @@ namespace RhythmEngine.Examples
         [SerializeField] private float KeysX = -8f;  // X position of the notes when they are meant to be pressed
 
         //TODO: change SimpleManiaSong struct to differenciate between cheese and obstacles
-        private SimpleManiaSong Song => RhythmEngine.Song as SimpleManiaSong; // We need to cast the song to our custom type to access the notes, note fall time, etc
+        private HamoebaSong Song => RhythmEngine.Song as HamoebaSong; // We need to cast the song to our custom type to access the notes, note fall time, etc
         private float NoteFallTime => Song.NoteFallTime;
 
         // Notes that haven't been spawned yet, it's a queue because we only need the access to the first element when spawning new notes
-        private Queue<SimpleManiaNote> _unspawnedNotes;
+        private Queue<Note> _unspawnedNotes;
         private List<SpawnedNote> _spawnedNotes;
 
         public event Action OnMiss; // This event is invoked when a note is missed (i.e. it's 100ms after the note's end time)
@@ -36,12 +37,12 @@ namespace RhythmEngine.Examples
         private class SpawnedNote
         {
             public readonly Transform Transform;
-            public readonly SimpleManiaNote Note;
+            public readonly Note Note;
 
             public readonly double StartTime;
             public readonly double EndTime;
 
-            public SpawnedNote(Transform transform, SimpleManiaNote note, double startTime, double noteFallTime)
+            public SpawnedNote(Transform transform, Note note, double startTime, double noteFallTime)
             {
                 Transform = transform;
                 Note = note;
@@ -53,7 +54,7 @@ namespace RhythmEngine.Examples
 
         private void Awake()
         {
-            _unspawnedNotes = new Queue<SimpleManiaNote>(Song.Notes.OrderBy(note => note.Time)); // We order the notes by time so we can spawn them in order
+            _unspawnedNotes = new Queue<Note>(Song.Notes.OrderBy(note => note.Time)); // We order the notes by time so we can spawn them in order
             _spawnedNotes = new List<SpawnedNote>();
         }
 
@@ -79,9 +80,10 @@ namespace RhythmEngine.Examples
             // Note: we spawn the notes {NoteFallTime} seconds before their actual time so they can fall from the top of the screen to the bottom.
         }
 
-        private void SpawnNote(SimpleManiaNote note, double currentTime)
+        private void SpawnNote(Note note, double currentTime)
         {
-            var noteTransform = Instantiate(NotePrefab, transform.position, Quaternion.identity);
+            Transform notePrefab = note.noteType == NoteType.Cheese ? CheeseNotePrefab : ObstaclePrefab;
+            var noteTransform = Instantiate(notePrefab, transform.position, Quaternion.identity);
             noteTransform.localPosition = new Vector3(SpawnX, LanePositions[note.Lane], 0); // Set the note's position to the correct lane and the spawn x position
             _spawnedNotes.Add(new SpawnedNote(noteTransform, note, currentTime, NoteFallTime)); // Add the note to the list of spawned notes
         }
@@ -89,7 +91,7 @@ namespace RhythmEngine.Examples
         /// <summary>
         /// Despawn a specific note. This overload is only called from the ManiaGameplayManager when a note is hit.
         /// </summary>
-        public void DespawnNote(SimpleManiaNote note)
+        public void DespawnNote(Note note)
         {
             // Since we don't have access to the spawned notes from the purely logical note itself, we need to find it in the list
             var spawnedNote = _spawnedNotes.FirstOrDefault(n => Equals(n.Note, note));
@@ -159,7 +161,7 @@ namespace RhythmEngine.Examples
         /// <param name="key">Note lane index</param>
         /// <param name="currentTime">Current time in seconds</param>
         /// <returns></returns>
-        public SimpleManiaNote? GetClosestNoteToInput(int key, double currentTime)
+        public Note? GetClosestNoteToInput(int key, double currentTime)
         {
             // We order the notes by their time offset to the current time, and get the first one (the closest one)
             var closestNote = _spawnedNotes.Where(n => n.Note.Lane == key).OrderBy(n => Math.Abs(n.EndTime - (float)currentTime)).FirstOrDefault();

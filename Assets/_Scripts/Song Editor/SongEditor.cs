@@ -11,7 +11,7 @@ namespace RhythmEngine.Examples
     public class SongEditor : MonoBehaviour
     {
         [SerializeField] private RhythmEngineCore RhythmEngine;
-        [SerializeField] private SimpleManiaSong SongToEdit;
+        [SerializeField] private HamoebaSong SongToEdit;
 
         [Space]
         [SerializeField] private Transform BeatsParent; // Parent for the beat visuals
@@ -22,7 +22,8 @@ namespace RhythmEngine.Examples
         public float BeatSpacing = 1f;
 
         [Space]
-        [SerializeField] private Transform NotePrefab;
+        [SerializeField] private Transform CheeseNotePrefab;
+        [SerializeField] private Transform ObstaclePrefab;
         [SerializeField] private float NoteOnBeatHeight = 0.33f; // The offset from the middle of a beaet to place a note
         [SerializeField] private float[] LanePositions = { -2.25f, -0.75f, 0.75f, 2.25f }; // We need the lane positions to correctly place the notes
 
@@ -36,9 +37,10 @@ namespace RhythmEngine.Examples
         private double SongOffset => SongToEdit.FirstBeatOffsetInSec;
         private double SongLength => SongToEdit.Clip.length;
 
-        private const int LaneCount = 4;
+        private int LaneCount = 4;
 
         private Transform[,] _noteGrid;
+        private NoteType?[,] _noteTypeGrid;
 
         private double _timePerBeat;
         private float _rawBeatCount; // Needed to properly match the beat parent y position to the current song position
@@ -96,23 +98,26 @@ namespace RhythmEngine.Examples
         private void LoadNotesFromSong(int beatCount)
         {
             _noteGrid = new Transform[beatCount, LaneCount];
+            _noteTypeGrid = new NoteType?[beatCount, LaneCount];
 
             foreach (var note in SongToEdit.Notes)
             {
                 var gridPosition = TimeToGridPosition(note.Time, note.Lane);
-                CreateNewNote(gridPosition);
+                CreateNewNote(gridPosition, note.noteType);
             }
         }
 
         /// <summary>
         /// Creates a new note at the given position.
         /// </summary>
-        private void CreateNewNote(Vector2Int gridPosition)
+        private void CreateNewNote(Vector2Int gridPosition, NoteType noteType)
         {
-            var noteTransform = Instantiate(NotePrefab, BeatsParent);
+            Transform notePrefab = noteType == NoteType.Cheese ? CheeseNotePrefab : ObstaclePrefab;
+            var noteTransform = Instantiate(notePrefab, BeatsParent);
             noteTransform.localPosition = GridPositionToNotePosition(gridPosition);
 
             _noteGrid[gridPosition.x, gridPosition.y] = noteTransform;
+            _noteTypeGrid[gridPosition.x, gridPosition.y] = noteType;
         }
 
         /// <summary>
@@ -254,7 +259,7 @@ namespace RhythmEngine.Examples
         /// Activates or deactivates the note at the given grid position.
         /// This is used by the NotePlacer to place and remove notes near the mouse.
         /// </summary>
-        public void ToggleNote(Vector2Int gridPosition)
+        public void ToggleNote(Vector2Int gridPosition, NoteType noteType)
         {
             var beat = gridPosition.x;
             var lane = gridPosition.y;
@@ -262,15 +267,19 @@ namespace RhythmEngine.Examples
             if (beat < 0 || beat > _maxBeat) return; // We don't want to go outside of the song length.
 
             var note = _noteGrid[beat, lane];
-            if (note != null)
+            if (note!=null)
             {
                 Destroy(note.gameObject);
                 _noteGrid[beat, lane] = null;
             }
             else
             {
-                CreateNewNote(gridPosition);
+                CreateNewNote(gridPosition, noteType);
             }
+        }
+        public void ToggleNote(Vector2Int gridPosition)
+        {
+            ToggleNote(gridPosition, NoteType.Cheese);
         }
 
         /// <summary>
@@ -278,17 +287,18 @@ namespace RhythmEngine.Examples
         /// </summary>
         public void Save()
         {
-            var notes = new bool[_noteGrid.GetLength(0), _noteGrid.GetLength(1)];
+            var notes = new NoteType?[_noteGrid.GetLength(0), _noteGrid.GetLength(1)];
 
             for (int y = 0; y < _noteGrid.GetLength(1); y++)
             {
                 for (int x = 0; x < _noteGrid.GetLength(0); x++)
                 {
-                    notes[x, y] = _noteGrid[x, y] != null;
+                    if(_noteGrid[x,y] != null)  
+                        notes[x, y] = _noteTypeGrid[x,y];
                 }
             }
 
-            ManiaEditorSongSaver.Save(notes, SongToEdit);
+            EditorSongSaver.Save(notes, SongToEdit, LaneCount);
         }
     }
 }

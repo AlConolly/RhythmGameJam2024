@@ -15,10 +15,18 @@ namespace RhythmEngine.Examples
         [Tooltip("Lane to play the note in.")]
         public int Lane;
 
-        public bool Equals(SimpleManiaNote other)
+        [Tooltip("Specify whether this is a note to avoid or collect.")]
+        public NoteType noteType;
+
+        public bool Equals(Note other)
         {
             // We use a small epsilon to account for floating point errors.
             return Math.Abs(Time - other.Time) < 0.0001d && Lane == other.Lane;
         }
+    }
+    public enum NoteType
+    {
+        Cheese = 0,
+        Obstacle = 1
     }
 }
