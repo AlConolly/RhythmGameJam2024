@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - pauseMenu
+  - RhythmEngine
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -39,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3784531075
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

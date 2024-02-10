@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: DemoSong
   m_EditorClassIdentifier: 
   Clip: {fileID: 8300000, guid: 1f3cf1dff09ce414ab669d3b89529cfb, type: 3}
-  ArtistName: Arcy
-  DisplayName: Rhythm Engine
   FirstBeatOffset: 30
   Looping: 0
   BaseBpm: 98
@@ -241,4 +239,4 @@ MonoBehaviour:
     Lane: 2
   NoteFallTime: 1.5
   PerfectTimeMs: 50
-  GoodTimeMs: 100
+  GoodTimeMs: 300
