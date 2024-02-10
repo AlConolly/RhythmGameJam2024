@@ -12,9 +12,14 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void OptionsMenu()
+    {
+        LoadLevel("Options");
+    }
+
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Mainmenu");
+        LoadLevel("Mainmenu");
     }
     
     /// <summary>
@@ -26,8 +31,7 @@ public class SceneSwitcher : MonoBehaviour
         Application.Quit();
     }
     /// <summary>
-    /// switch to level with given name ex. LoadLevel("Level 1");
-    /// VistasFileja - "lowkey this is for lazy mfs"
+    /// switch to a scene with given name ex. LoadLevel("Level 1");
     /// </summary>
     public void LoadLevel(string levelName)
     {
