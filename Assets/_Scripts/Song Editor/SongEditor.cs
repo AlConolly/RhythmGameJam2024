@@ -22,8 +22,7 @@ namespace RhythmEngine.Examples
         public float BeatSpacing = 1f;
 
         [Space]
-        [SerializeField] private Transform CheeseNotePrefab;
-        [SerializeField] private Transform ObstaclePrefab;
+        [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab;
         [SerializeField] private float NoteOnBeatHeight = 0.33f; // The offset from the middle of a beaet to place a note
         [SerializeField] private float[] LanePositions = { -2.25f, -0.75f, 0.75f, 2.25f }; // We need the lane positions to correctly place the notes
 
@@ -32,7 +31,7 @@ namespace RhythmEngine.Examples
 
         [Space]
         [SerializeField] private Slider SongPositionSlider; // For visual representation of the song position
-
+        
         // Shorthands for the song properties
         private double SongOffset => SongToEdit.FirstBeatOffsetInSec;
         private double SongLength => SongToEdit.Clip.length;
@@ -112,7 +111,19 @@ namespace RhythmEngine.Examples
         /// </summary>
         private void CreateNewNote(Vector2Int gridPosition, NoteType noteType)
         {
-            Transform notePrefab = noteType == NoteType.Cheese ? CheeseNotePrefab : ObstaclePrefab;
+            Transform notePrefab = CheeseNotePrefab; // set to CheeseNotePreab cuz the compiler complains otherwise
+            switch (noteType)
+            {
+                case NoteType.Cheese:
+                    notePrefab = CheeseNotePrefab;
+                    break;
+                case NoteType.Obstacle:
+                    notePrefab = ObstaclePrefab;
+                    break;
+                case NoteType.Duplicate:
+                    notePrefab = DuplicationPrefab;
+                    break;
+            }
             var noteTransform = Instantiate(notePrefab, BeatsParent);
             noteTransform.localPosition = GridPositionToNotePosition(gridPosition);
 

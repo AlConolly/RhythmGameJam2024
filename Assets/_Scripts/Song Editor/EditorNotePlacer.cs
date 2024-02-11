@@ -23,7 +23,7 @@ namespace RhythmEngine.Examples
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse0)) // Right mouse for cheese, left mouse for trap
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse2)) // Right mouse for cheese, left mouse for trap, middle mouse for duplication note(note that adds another hamster)
             {
                 // This could be also done by comparing screen positions, but this easier.
                 var mousePos = Input.mousePosition;
@@ -31,7 +31,13 @@ namespace RhythmEngine.Examples
 
                 var currentLane = GetLaneFromWorldPos(worldPos);
                 var currentBeat = GetBeatFromWorldPos(worldPos);
-                NoteType noteType = Input.GetKeyDown(KeyCode.Mouse1) ? NoteType.Cheese : NoteType.Obstacle;
+                NoteType noteType = NoteType.Cheese; // set to Cheese so compiler doesn't complain
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                    noteType = NoteType.Cheese;
+                else if (Input.GetKeyDown(KeyCode.Mouse0))
+                    noteType = NoteType.Obstacle;
+                else if (Input.GetKeyDown(KeyCode.Mouse2))
+                    noteType = NoteType.Duplicate;
 
                 songEditor.ToggleNote(new Vector2Int(currentBeat, currentLane),noteType);
             }

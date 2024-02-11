@@ -12,8 +12,7 @@ namespace RhythmEngine.Examples
     public class NoteManager : MonoBehaviour
     {
         [SerializeField] private RhythmEngineCore RhythmEngine;
-        [SerializeField] private Transform CheeseNotePrefab;
-        [SerializeField] private Transform ObstaclePrefab;
+        [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab;
 
         [Space]
         [SerializeField] private float[] LanePositions = {-2.25f, -0.75f, 0.75f, 2.25f}; // Y positions of the lanes
@@ -82,7 +81,19 @@ namespace RhythmEngine.Examples
 
         private void SpawnNote(Note note, double currentTime)
         {
-            Transform notePrefab = note.noteType == NoteType.Cheese ? CheeseNotePrefab : ObstaclePrefab;
+            Transform notePrefab = CheeseNotePrefab; // set to CheeseNotePreab cuz the compiler complains otherwise
+            switch (note.noteType)
+            {
+                case NoteType.Cheese:
+                    notePrefab = CheeseNotePrefab;
+                    break;
+                case NoteType.Obstacle:
+                    notePrefab = ObstaclePrefab;
+                    break;
+                case NoteType.Duplicate:
+                    notePrefab = DuplicationPrefab;
+                    break;
+            }
             var noteTransform = Instantiate(notePrefab, transform.position, Quaternion.identity);
             noteTransform.localPosition = new Vector3(SpawnX, LanePositions[note.Lane], 0); // Set the note's position to the correct lane and the spawn x position
             _spawnedNotes.Add(new SpawnedNote(noteTransform, note, currentTime, NoteFallTime)); // Add the note to the list of spawned notes

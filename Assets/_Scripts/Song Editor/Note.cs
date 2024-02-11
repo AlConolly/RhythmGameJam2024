@@ -27,6 +27,7 @@ namespace RhythmEngine.Examples
     public enum NoteType
     {
         Cheese = 0,
-        Obstacle = 1
+        Obstacle = 1,
+        Duplicate =2
     }
 }

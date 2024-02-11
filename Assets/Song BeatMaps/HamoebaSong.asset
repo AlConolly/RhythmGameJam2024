@@ -130,6 +130,19 @@ MonoBehaviour:
   - Time: 5.846326529941693
     Lane: 3
     noteType: 1
+  - Time: 6.764693876880468
+    Lane: 0
+    noteType: 2
+  - Time: 6.764693876880468
+    Lane: 1
+    noteType: 2
+  - Time: 6.764693876880468
+    Lane: 2
+    noteType: 2
+  - Time: 6.764693876880468
+    Lane: 3
+    noteType: 2
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 300
+  LaneCount: 4

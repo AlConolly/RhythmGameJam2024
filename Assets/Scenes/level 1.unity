@@ -1233,6 +1233,7 @@ MonoBehaviour:
   RhythmEngine: {fileID: 1502335008}
   CheeseNotePrefab: {fileID: 3858487666298991635, guid: 0365443002214c641ab4ea20af50b76a, type: 3}
   ObstaclePrefab: {fileID: 3858487666298991635, guid: 495a57d700b94c84bb86b9d6c67fc49e, type: 3}
+  DuplicationPrefab: {fileID: 3858487666298991635, guid: 23681049a8425464787efab2c9126d8a, type: 3}
   LanePositions:
   - -2.25
   - -0.75

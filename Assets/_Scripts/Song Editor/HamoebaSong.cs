@@ -22,5 +22,7 @@ namespace RhythmEngine.Examples
 
         [Tooltip("Input time offset (in milliseconds) in which a note will be considered 'good'")]
         public double GoodTimeMs = 100;
+
+        public double LaneCount = 4; // this doesn't do anything right now
     }
 }

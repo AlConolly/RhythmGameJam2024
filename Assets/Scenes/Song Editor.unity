@@ -1305,13 +1305,14 @@ MonoBehaviour:
   BeatSpacing: 1
   CheeseNotePrefab: {fileID: 3858487666298991635, guid: 0365443002214c641ab4ea20af50b76a, type: 3}
   ObstaclePrefab: {fileID: 3858487666298991635, guid: 495a57d700b94c84bb86b9d6c67fc49e, type: 3}
+  DuplicationPrefab: {fileID: 3858487666298991635, guid: 23681049a8425464787efab2c9126d8a, type: 3}
   NoteOnBeatHeight: 0
   LanePositions:
   - -2.25
   - -0.75
   - 0.75
   - 2.25
-  BeatsKeyX: -6
+  BeatsKeyX: -7
   SongPositionSlider: {fileID: 1685264003}
 --- !u!1 &860234000
 GameObject:
@@ -1467,7 +1468,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1605,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 1100423840}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
