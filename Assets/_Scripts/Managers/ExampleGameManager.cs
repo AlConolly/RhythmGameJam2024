@@ -11,6 +11,8 @@ namespace RhythmEngine
     /// </summary>
     public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
+        public static int score = 0;
+        public static float health = 100;
         public static event Action<GameState> OnBeforeStateChanged = delegate { };
         public static event Action<GameState> OnAfterStateChanged = delegate { };
         private GameObject pauseMenu;
@@ -52,6 +54,7 @@ namespace RhythmEngine
                 case GameState.Playing:
                     break;
                 case GameState.Win:
+                    onWin();
                     break;
                 case GameState.Lose:
                     break;
@@ -69,6 +72,10 @@ namespace RhythmEngine
             Debug.Log($"New state: {newState}");
         }
 
+        public void onWin()
+        {
+            
+        }
         /// <summary>
         /// Resumes the game.
         /// </summary>

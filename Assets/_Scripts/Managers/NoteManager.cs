@@ -28,6 +28,7 @@ namespace RhythmEngine.Examples
         private List<SpawnedNote> _spawnedNotes;
 
         public event Action OnMiss; // This event is invoked when a note is missed (i.e. it's 100ms after the note's end time)
+        public GameObject Track2; //this is what is enabled when duplication notes are hit
 
         /// <summary>
         /// A simple way of storing the spawned notes.
@@ -55,6 +56,7 @@ namespace RhythmEngine.Examples
         {
             _unspawnedNotes = new Queue<Note>(Song.Notes.OrderBy(note => note.Time)); // We order the notes by time so we can spawn them in order
             _spawnedNotes = new List<SpawnedNote>();
+            Track2 = Helpers.FindInActiveObjectByTag("secondTrack");
         }
 
         private void Update()
@@ -94,7 +96,7 @@ namespace RhythmEngine.Examples
                     notePrefab = DuplicationPrefab;
                     break;
             }
-            var noteTransform = Instantiate(notePrefab, transform.position, Quaternion.identity);
+            var noteTransform = Instantiate(notePrefab, transform);
             noteTransform.localPosition = new Vector3(SpawnX, LanePositions[note.Lane], 0); // Set the note's position to the correct lane and the spawn x position
             _spawnedNotes.Add(new SpawnedNote(noteTransform, note, currentTime, NoteFallTime)); // Add the note to the list of spawned notes
         }

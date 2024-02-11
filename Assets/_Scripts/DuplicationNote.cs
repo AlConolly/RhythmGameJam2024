@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class DuplicationNote : MonoBehaviour
+namespace RhythmEngine.Examples
 {
-    private GameObject NoteLines;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class DuplicationNote : MonoBehaviour
     {
-        if(collision.CompareTag("Player"))
+        public GameObject NoteLines;
+        private void Start()
+        {
+            NoteLines = GetComponentInParent<NoteManager>().Track2;
+        }
+        private void OnDisable()
         {
             NoteLines.SetActive(true);
         }
+
+        //for some reason this OnTrigger doesn't work and it angers me
+        /*
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                print("player triggered duplication");
+                NoteLines.SetActive(true);
+            }
+        }
+        */
     }
 }
