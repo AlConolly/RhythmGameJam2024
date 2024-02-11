@@ -22,22 +22,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1fb1835108cc7a24ab949180f7660c6e, type: 2}
   BeatSequenceChanges: []
   Notes:
-  - Time: 0.9483673462682233
-    Lane: 0
-    noteType: 1
-  - Time: 0.9483673462682233
-    Lane: 1
-    noteType: 1
-  - Time: 0.9483673462682233
-    Lane: 2
-    noteType: 0
-  - Time: 0.9483673462682233
-    Lane: 3
-    noteType: 1
-  - Time: 1.2544897952478151
-    Lane: 2
-    noteType: 0
-  - Time: 1.560612244227407
+  - Time: 1.407551019737611
     Lane: 2
     noteType: 0
   - Time: 1.7136734687172028
@@ -51,15 +36,15 @@ MonoBehaviour:
     noteType: 0
   - Time: 2.1728571421865905
     Lane: 2
-    noteType: 0
-  - Time: 2.1728571421865905
-    Lane: 3
     noteType: 1
   - Time: 2.4789795911661825
     Lane: 2
     noteType: 0
   - Time: 2.7851020401457744
     Lane: 3
+    noteType: 0
+  - Time: 2.93816326463557
+    Lane: 4
     noteType: 0
   - Time: 3.0912244891253664
     Lane: 1
@@ -141,6 +126,9 @@ MonoBehaviour:
     noteType: 2
   - Time: 6.764693876880468
     Lane: 3
+    noteType: 2
+  - Time: 6.764693876880468
+    Lane: 4
     noteType: 2
   NoteFallTime: 1
   PerfectTimeMs: 50

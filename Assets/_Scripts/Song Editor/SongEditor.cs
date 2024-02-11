@@ -36,7 +36,7 @@ namespace RhythmEngine.Examples
         private double SongOffset => SongToEdit.FirstBeatOffsetInSec;
         private double SongLength => SongToEdit.Clip.length;
 
-        private int LaneCount = 4;
+        private int LaneCount = 5;
 
         private Transform[,] _noteGrid;
         private NoteType?[,] _noteTypeGrid;
@@ -47,6 +47,7 @@ namespace RhythmEngine.Examples
 
         private void Awake()
         {
+            LaneCount = LanePositions.Length;
             // Since we're in Manual Mode, we need to set the song manually
             RhythmEngine.SetSong(SongToEdit);
             RhythmEngine.InitTime();
