@@ -5,14 +5,14 @@ namespace RhythmEngine.Examples
 {
     public class DuplicationNote : MonoBehaviour
     {
-        public GameObject NoteLines;
+        private GameObject NoteLines;
         private void Start()
         {
             NoteLines = GetComponentInParent<NoteManager>().Track2;
         }
         private void OnDisable()
         {
-            NoteLines.SetActive(true);
+            NoteLines.SetActive(!NoteLines.activeSelf);
         }
 
         //for some reason this OnTrigger doesn't work and it angers me

@@ -7,6 +7,9 @@ TagManager:
   - pauseMenu
   - RhythmEngine
   - Note
+  - secondTrack
+  - trap
+  - DuplicationNote
   layers:
   - Default
   - TransparentFX

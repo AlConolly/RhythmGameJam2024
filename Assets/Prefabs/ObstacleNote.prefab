@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 974648914715265259}
   m_Layer: 0
   m_Name: ObstacleNote
-  m_TagString: Note
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

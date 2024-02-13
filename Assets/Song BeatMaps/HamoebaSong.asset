@@ -19,8 +19,17 @@ MonoBehaviour:
   BpmChanges: []
   BeatSequences:
     BeatSequences:
-    - {fileID: 11400000, guid: 1fb1835108cc7a24ab949180f7660c6e, type: 2}
-  BeatSequenceChanges: []
+    - {fileID: 11400000, guid: b7dddb9425885ea4387351eca10e75c3, type: 2}
+    - {fileID: 11400000, guid: 4783ffbd050df7449a9e6b1fcffdb64a, type: 2}
+  BeatSequenceChanges:
+  - Time: 26.93000030517578
+    SequenceIndex: 1
+  - Time: 29.3799991607666
+    SequenceIndex: 0
+  - Time: 36.72999954223633
+    SequenceIndex: 1
+  - Time: 39.18000030517578
+    SequenceIndex: -1
   Notes:
   - Time: 1.407551019737611
     Lane: 2
@@ -130,7 +139,55 @@ MonoBehaviour:
   - Time: 6.764693876880468
     Lane: 4
     noteType: 2
-  NoteFallTime: 1
+  - Time: 7.376938774839652
+    Lane: 4
+    noteType: 0
+  - Time: 7.989183672798836
+    Lane: 3
+    noteType: 0
+  - Time: 8.601428570758019
+    Lane: 4
+    noteType: 0
+  - Time: 9.213673468717204
+    Lane: 3
+    noteType: 0
+  - Time: 9.825918366676387
+    Lane: 4
+    noteType: 0
+  - Time: 10.43816326463557
+    Lane: 3
+    noteType: 0
+  - Time: 11.050408162594755
+    Lane: 4
+    noteType: 0
+  - Time: 11.662653060553938
+    Lane: 3
+    noteType: 0
+  - Time: 12.274897958513122
+    Lane: 4
+    noteType: 0
+  - Time: 12.887142856472305
+    Lane: 3
+    noteType: 0
+  - Time: 13.499387754431488
+    Lane: 4
+    noteType: 0
+  - Time: 14.111632652390673
+    Lane: 3
+    noteType: 0
+  - Time: 14.723877550349856
+    Lane: 4
+    noteType: 0
+  - Time: 15.33612244830904
+    Lane: 3
+    noteType: 0
+  - Time: 15.948367346268224
+    Lane: 4
+    noteType: 0
+  - Time: 16.560612244227407
+    Lane: 3
+    noteType: 0
+  NoteFallTime: 1.5
   PerfectTimeMs: 50
   GoodTimeMs: 300
-  LaneCount: 4
+  LaneCount: 5
