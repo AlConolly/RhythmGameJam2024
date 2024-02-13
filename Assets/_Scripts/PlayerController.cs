@@ -26,13 +26,14 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        KeyCode upKey = KeyCode.W;
-        KeyCode downKey = KeyCode.S;
+        KeyCode upKey = KeyCode.UpArrow;
+        KeyCode downKey = KeyCode.DownArrow;
         if (clone)
         {
-            upKey = KeyCode.UpArrow;
-            downKey = KeyCode.DownArrow;
+             upKey = KeyCode.W;
+             downKey = KeyCode.S;
         }
+            
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //TODO: retrict movement to tracks
         if (Input.GetKeyDown(downKey) && currentLane > minLane)

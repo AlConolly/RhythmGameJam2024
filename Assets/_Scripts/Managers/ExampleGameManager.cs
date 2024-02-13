@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using RhythmEngine;
-
+using TMPro;
 /// <summary>
 /// Nice, easy to understand enum-based game manager. For larger and more complex games, look into
 /// state machines. But this will serve just fine for most games.
@@ -17,8 +17,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     private RhythmEngineCore rhythmEngine;
     public GameObject LoseScreen;
     public GameObject WinScreen;
-    public TextMesh scoreText;
-    public AudioSource MusicPlayer;
+    public TextMeshProUGUI scoreText;
     public GameState State { get; private set; }
 
     // Kick the game off with the first state
