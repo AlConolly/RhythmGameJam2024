@@ -5,6 +5,7 @@ using RhythmEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ExampleGameManager gameManager;
     public RhythmEngineCore rhythmEngine;
     public NoteManager noteManager;
     public float trackWidth;
@@ -12,11 +13,11 @@ public class PlayerController : MonoBehaviour
     public int maxLane;
     public int currentLane = 1;
     public bool clone;
-    private Note nextNote;
     private GameObject NoteLines;
     private void Start()
     {
         NoteLines = noteManager.Track2;
+        gameManager = GameObject.Find("Game Manager").GetComponent<ExampleGameManager>();
     }
     // Update is called once per frame
     void Update()
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        if (gameManager.State == GameState.Paused || gameManager.State == GameState.Win || gameManager.State == GameState.Lose)
+            return;
+
         KeyCode upKey = KeyCode.UpArrow;
         KeyCode downKey = KeyCode.DownArrow;
         if (clone)
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if(collision.CompareTag("trap"))
         {
             ExampleGameManager.health-=25;
-            noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
+            //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
         if(collision.CompareTag("DuplicationNote"))
         {

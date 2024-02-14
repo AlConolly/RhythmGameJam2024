@@ -34,29 +34,17 @@ MonoBehaviour:
   - Time: 1.407551019737611
     Lane: 2
     noteType: 0
-  - Time: 1.7136734687172028
-    Lane: 1
-    noteType: 0
   - Time: 1.8667346932069988
-    Lane: 0
-    noteType: 0
-  - Time: 2.019795917696795
-    Lane: 1
-    noteType: 0
-  - Time: 2.1728571421865905
-    Lane: 2
-    noteType: 1
-  - Time: 2.4789795911661825
-    Lane: 2
-    noteType: 0
-  - Time: 2.7851020401457744
     Lane: 3
     noteType: 0
-  - Time: 2.93816326463557
+  - Time: 2.4789795911661825
     Lane: 4
     noteType: 0
   - Time: 3.0912244891253664
     Lane: 1
+    noteType: 0
+  - Time: 3.0912244891253664
+    Lane: 4
     noteType: 0
   - Time: 3.244285713615162
     Lane: 0
@@ -83,34 +71,31 @@ MonoBehaviour:
     Lane: 1
     noteType: 0
   - Time: 4.927959183002917
-    Lane: 1
-    noteType: 1
-  - Time: 4.927959183002917
     Lane: 2
     noteType: 1
   - Time: 4.927959183002917
     Lane: 3
+    noteType: 1
+  - Time: 4.927959183002917
+    Lane: 4
     noteType: 1
   - Time: 5.081020407492713
-    Lane: 2
-    noteType: 1
-  - Time: 5.234081631982509
-    Lane: 1
+    Lane: 3
     noteType: 1
   - Time: 5.234081631982509
     Lane: 2
     noteType: 1
   - Time: 5.234081631982509
     Lane: 3
+    noteType: 1
+  - Time: 5.234081631982509
+    Lane: 4
     noteType: 1
   - Time: 5.540204080962101
-    Lane: 1
+    Lane: 2
     noteType: 1
   - Time: 5.540204080962101
-    Lane: 3
-    noteType: 1
-  - Time: 5.693265305451897
-    Lane: 1
+    Lane: 4
     noteType: 1
   - Time: 5.693265305451897
     Lane: 2
@@ -118,11 +103,14 @@ MonoBehaviour:
   - Time: 5.693265305451897
     Lane: 3
     noteType: 1
-  - Time: 5.846326529941693
-    Lane: 1
+  - Time: 5.693265305451897
+    Lane: 4
     noteType: 1
   - Time: 5.846326529941693
-    Lane: 3
+    Lane: 2
+    noteType: 1
+  - Time: 5.846326529941693
+    Lane: 4
     noteType: 1
   - Time: 6.764693876880468
     Lane: 0
