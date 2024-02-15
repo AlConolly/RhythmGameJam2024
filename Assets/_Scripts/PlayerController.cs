@@ -30,16 +30,15 @@ public class PlayerController : MonoBehaviour
         if (gameManager.State == GameState.Paused || gameManager.State == GameState.Win || gameManager.State == GameState.Lose)
             return;
 
-        KeyCode upKey = KeyCode.UpArrow;
-        KeyCode downKey = KeyCode.DownArrow;
+        KeyCode upKey = KeyCode.W;
+        KeyCode downKey = KeyCode.S;
         if (clone)
         {
-             upKey = KeyCode.W;
-             downKey = KeyCode.S;
+             upKey = KeyCode.I;
+             downKey = KeyCode.J;
         }
             
         //TODO: make keys remappable with the new Unity Input System. This works for now
-        //TODO: retrict movement to tracks
         if (Input.GetKeyDown(downKey) && currentLane > minLane)
         {
             currentLane--;
