@@ -1,1 +1,106 @@
-{}
+{
+    "name": "Controlls",
+    "maps": [
+        {
+            "name": "inGame",
+            "id": "7055db94-3c33-46fc-b42b-1ca3092d42eb",
+            "actions": [
+                {
+                    "name": "moveup-main",
+                    "type": "Button",
+                    "id": "703481cb-b738-440b-954b-f9013df25a5c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "movedown-main",
+                    "type": "Button",
+                    "id": "38621fee-812f-4537-a6b2-6d19b554867c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "moveup-clone",
+                    "type": "Button",
+                    "id": "50860a73-0227-45ff-99bc-afe69231a60d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "movedown-clone",
+                    "type": "Button",
+                    "id": "cbc8cbc5-879e-461a-97db-61893043c282",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ebc04b52-1c27-4e6d-b708-357a9809175d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "moveup-main",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d296c6f3-2077-42dd-8cf8-7aaddfc8d01d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "movedown-main",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6628c1a6-b7fb-4c94-b775-fa2a77d511a6",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "movedown-clone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "534ba303-f0fe-4637-a655-3d5234f9534a",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "moveup-clone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "keyboard",
+            "bindingGroup": "keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
