@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         if (gameManager.State == GameState.Paused || gameManager.State == GameState.Win || gameManager.State == GameState.Lose)
             return;
 
+        /*
         bool upKey = User_Input.instance.MainMoveUp;
         bool downKey = User_Input.instance.MainMoveDown;
         if (clone)
@@ -37,15 +38,40 @@ public class PlayerController : MonoBehaviour
              upKey = User_Input.instance.CloneMoveUp;
              downKey = User_Input.instance.CloneMoveDown;
         }
+        */
+        KeyCode upKey = KeyCode.UpArrow;
+        KeyCode downKey = KeyCode.DownArrow;
 
-            
+        if(clone)
+        {
+            upKey = KeyCode.Space;
+            downKey = KeyCode.Space;
+        }
+        
         //TODO: make keys remappable with the new Unity Input System. This works for now
-        if (downKey && currentLane > minLane)
+        //if (downKey && currentLane > minLane)
+        if(clone && Input.GetKeyDown(upKey))
+        {
+            if (currentLane == minLane)
+            {
+                currentLane++;
+                transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
+            }
+            else if(currentLane == maxLane)
+            {
+                currentLane--;
+                transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
+            }
+            return;
+        }
+
+        else if(Input.GetKeyDown(downKey) && currentLane > minLane)
         {
             currentLane--;
             transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
         }
-        else if (upKey && currentLane < maxLane)
+        //else if (upKey && currentLane < maxLane)
+        else if (Input.GetKeyDown(upKey) && currentLane < maxLane)
         {
             currentLane++;
             transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);

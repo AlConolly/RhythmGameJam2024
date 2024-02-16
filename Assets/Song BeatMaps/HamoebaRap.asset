@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205f63e5372016842aeac60dc398b842, type: 3}
+  m_Name: HamoebaRap
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 70a084283c2a77441ac94a42181b3c14, type: 3}
+  FirstBeatOffset: 0
+  Looping: 0
+  BaseBpm: 120
+  BpmChanges: []
+  BeatSequences:
+    BeatSequences:
+    - {fileID: 11400000, guid: 806b4eae28e7c904291d4dbb98a1b802, type: 2}
+  BeatSequenceChanges: []
+  Notes:
+  - Time: 0.5
+    Lane: 4
+    noteType: 0
+  - Time: 0.875
+    Lane: 3
+    noteType: 0
+  - Time: 1.125
+    Lane: 3
+    noteType: 0
+  - Time: 1.5
+    Lane: 4
+    noteType: 0
+  - Time: 2.5
+    Lane: 4
+    noteType: 0
+  - Time: 3.5
+    Lane: 4
+    noteType: 0
+  - Time: 4.5
+    Lane: 4
+    noteType: 0
+  - Time: 5.5
+    Lane: 4
+    noteType: 0
+  - Time: 6.5
+    Lane: 4
+    noteType: 0
+  - Time: 7.5
+    Lane: 4
+    noteType: 0
+  - Time: 8.5
+    Lane: 4
+    noteType: 0
+  - Time: 9.5
+    Lane: 4
+    noteType: 0
+  - Time: 10.5
+    Lane: 4
+    noteType: 0
+  - Time: 11.5
+    Lane: 4
+    noteType: 0
+  - Time: 12.5
+    Lane: 4
+    noteType: 0
+  - Time: 13.5
+    Lane: 4
+    noteType: 0
+  - Time: 14.5
+    Lane: 4
+    noteType: 0
+  - Time: 15.5
+    Lane: 4
+    noteType: 0
+  - Time: 16.5
+    Lane: 4
+    noteType: 0
+  - Time: 17.5
+    Lane: 4
+    noteType: 0
+  - Time: 18.5
+    Lane: 4
+    noteType: 0
+  - Time: 19.5
+    Lane: 4
+    noteType: 0
+  - Time: 20.5
+    Lane: 4
+    noteType: 0
+  - Time: 21.5
+    Lane: 4
+    noteType: 0
+  - Time: 22.5
+    Lane: 4
+    noteType: 0
+  - Time: 23.5
+    Lane: 4
+    noteType: 0
+  - Time: 24.5
+    Lane: 4
+    noteType: 0
+  - Time: 25.5
+    Lane: 4
+    noteType: 0
+  - Time: 26.5
+    Lane: 4
+    noteType: 0
+  - Time: 27.5
+    Lane: 4
+    noteType: 0
+  NoteFallTime: 1.5
+  PerfectTimeMs: 50
+  GoodTimeMs: 300
+  LaneCount: 5

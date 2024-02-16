@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RhythmEngine: {fileID: 96801943}
-  SongToEdit: {fileID: 11400000, guid: c675e71689a444c4ea5661e45a5e427f, type: 2}
+  SongToEdit: {fileID: 11400000, guid: 65b7d8d20a11b3649942681be0494ae0, type: 2}
   BeatsParent: {fileID: 1310105207}
   MajorBeatPrefab: {fileID: 46678518137551397, guid: 8632acb5c49436c44b77b73133c82c79, type: 3}
   MinorBeatPrefab: {fileID: 832352622585340936, guid: 66b97b33ea8b78d45a3be7da65af3441, type: 3}
