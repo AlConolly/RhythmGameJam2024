@@ -39,33 +39,19 @@ public class PlayerController : MonoBehaviour
              downKey = User_Input.instance.CloneMoveDown;
         }
         */
-        KeyCode upKey = KeyCode.UpArrow;
-        KeyCode downKey = KeyCode.DownArrow;
+        KeyCode upKey = KeyCode.W;
+        KeyCode downKey = KeyCode.S;
 
         if(clone)
         {
-            upKey = KeyCode.Space;
-            downKey = KeyCode.Space;
+            upKey = KeyCode.UpArrow;
+            downKey = KeyCode.DownArrow;
         }
         
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if(clone && Input.GetKeyDown(upKey))
-        {
-            if (currentLane == minLane)
-            {
-                currentLane++;
-                transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
-            }
-            else if(currentLane == maxLane)
-            {
-                currentLane--;
-                transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
-            }
-            return;
-        }
-
-        else if(Input.GetKeyDown(downKey) && currentLane > minLane)
+        
+        if(Input.GetKeyDown(downKey) && currentLane > minLane)
         {
             currentLane--;
             transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
