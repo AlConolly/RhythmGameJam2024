@@ -682,6 +682,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &112163453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112163450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95c34a31fa870b468c58e7e733dbfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeatSequencer: {fileID: 1502335007}
+  InstrumentsToWatch: 0000000001000000
+  BeatScale: {x: 1.1, y: 0.8, z: 1}
+  LerpSpeed: 3
 --- !u!1 &133643492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,6 +3427,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1320827737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320827730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95c34a31fa870b468c58e7e733dbfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeatSequencer: {fileID: 1502335007}
+  InstrumentsToWatch: 0000000001000000
+  BeatScale: {x: 1.1, y: 0.8, z: 1}
+  LerpSpeed: 3
 --- !u!1 &1337672628
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,6 +4284,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4964503886246473747, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 112163452}
+    - targetCorrespondingSourceObject: {fileID: 4964503886246473747, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 112163453}
   m_SourcePrefab: {fileID: 100100000, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
 --- !u!1 &1692271735
 GameObject:
@@ -5308,6 +5343,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4964503886246473747, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1320827736}
+    - targetCorrespondingSourceObject: {fileID: 4964503886246473747, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1320827737}
   m_SourcePrefab: {fileID: 100100000, guid: 66dfa7da10331ff468c0cc856317abc4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

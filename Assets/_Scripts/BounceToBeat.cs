@@ -6,7 +6,7 @@ namespace RhythmEngine.Examples
     /// <summary>
     /// This class bounces the sample text to the beat given by the BeatSequencer.
     /// </summary>
-    public class BounceToBeat : MonoBehaviour
+    public class ManiaSampleTextBounce : MonoBehaviour
     {
         [SerializeField] private BeatSequencer BeatSequencer;
 
@@ -40,7 +40,7 @@ namespace RhythmEngine.Examples
             // If the instrument is not in the list of instruments we want to watch, we don't want to scale up.
             if (Array.IndexOf(InstrumentsToWatch, instrument) == -1) return;
 
-            transform.localScale = BeatScale;
+            transform.localScale = new Vector2(transform.localScale.x, BeatScale.y);
         }
 
         private void Update()
