@@ -120,6 +120,13 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         pauseMenu?.SetActive(false);
         rhythmEngine.Unpause();
     }
+    private void checkEndSong()
+    {
+        if(rhythmEngine.GetCurrentAudioTime()>rhythmEngine.MusicSource.clip.length)
+        {
+            WinScreen.SetActive(true);
+        }
+    }
 }
 
 [Serializable]
