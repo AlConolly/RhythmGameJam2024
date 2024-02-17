@@ -25,7 +25,7 @@ public class NoteManager : MonoBehaviour
     private Queue<Note> _unspawnedNotes;
     private List<SpawnedNote> _spawnedNotes;
 
-    public event Action OnMiss; // This event is invoked when a note is missed (i.e. it's 300ms after the note's end time)
+    public static event Action OnMiss; // This event is invoked when a note is missed (i.e. it's 300ms after the note's end time)
     [HideInInspector] public GameObject Track2; //this is what is enabled when duplication notes are hit
     private Transform notePrefab;
     private double time;
@@ -154,7 +154,8 @@ public class NoteManager : MonoBehaviour
             if (currentTime > spawnedNote.EndTime + Song.GoodTimeMs / 1000)  
             {
                 notesToRemove.Add(spawnedNote);
-                OnMiss?.Invoke();
+                if(spawnedNote.Note.noteType == NoteType.Cheese || spawnedNote.Note.noteType == NoteType.Hold)
+                    OnMiss?.Invoke();
                 continue;
             }
 

@@ -11,6 +11,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public static int score = 0;
     public static int missed = 0;
     public static float health = 100;
+    public float damageOnMiss = 10;
     public static event Action<GameState> OnBeforeStateChanged = delegate { };
     public static event Action<GameState> OnAfterStateChanged = delegate { };
     private GameObject pauseMenu;
@@ -34,11 +35,13 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     private void OnEnable()
     {
         OnBeforeStateChanged += unPause;
+        NoteManager.OnMiss += reduceHealth;
         pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu");
         pauseMenu?.SetActive(false);
     }
     private void OnDisable()
     {
+        NoteManager.OnMiss -= reduceHealth;
         OnBeforeStateChanged -= unPause;
     }
 
@@ -135,8 +138,12 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         if(songTime>songLength)
         {
-            WinScreen.SetActive(true);
+            ChangeState(GameState.Win);
         }
+    }
+    private void reduceHealth()
+    {
+        health -= damageOnMiss;
     }
 }
 

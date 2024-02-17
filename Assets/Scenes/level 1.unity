@@ -3127,6 +3127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efb1ae7a61b254489a4d92a2d5a7065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageOnMiss: 10
   LoseScreen: {fileID: 50910913}
   WinScreen: {fileID: 1709558580}
   scoreText: {fileID: 1692271737}

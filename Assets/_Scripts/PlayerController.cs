@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public RhythmEngineCore rhythmEngine;
     public NoteManager noteManager;
     public float trackWidth;
+    public float damageOnTrap =25;
     public int minLane;
     public int maxLane;
     public int currentLane = 1;
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Note"))
         {
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
         if(collision.CompareTag("trap"))
         {
-            ExampleGameManager.health-=25;
+            ExampleGameManager.health-=damageOnTrap;
             //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
         if(collision.CompareTag("DuplicationNote"))
