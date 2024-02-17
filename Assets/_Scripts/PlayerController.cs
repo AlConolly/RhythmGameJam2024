@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public int currentLane = 1;
     public bool clone;
     private GameObject NoteLines;
+    public float dupeCooldown = 2;
+    private bool canDupe = true;
     private void Start()
     {
         NoteLines = noteManager.Track2;
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
         
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if(clone && Input.GetKeyDown(KeyCode.Space))
+        if(clone && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey))
         {
             if (currentLane == minLane)
             {
@@ -103,8 +105,18 @@ public class PlayerController : MonoBehaviour
         }
         if(collision.CompareTag("DuplicationNote"))
         {
-            NoteLines.SetActive(!NoteLines.activeSelf);
+            if (canDupe)
+            {
+                NoteLines.SetActive(!NoteLines.activeSelf);
+                canDupe = false;
+                Invoke("resetCooldown", dupeCooldown); // after cooldown seconds can interact with dupeNote again
+            }
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
     }
+    private void resetCooldown()
+    {
+        canDupe = true;
+    }
+
 }

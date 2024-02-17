@@ -72,7 +72,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
                 break;
             case GameState.Win:
                 WinScreen.SetActive(true);
-                scoreText.text = "Hit: " + score + "Missed: " + missed;
+                scoreText.text = "Hit: " + score + "\nMissed: " + missed;
                 Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 rhythmEngine.Pause();
                 break;
