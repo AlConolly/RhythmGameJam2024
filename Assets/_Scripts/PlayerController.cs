@@ -9,11 +9,14 @@ public class PlayerController : MonoBehaviour
     public RhythmEngineCore rhythmEngine;
     public NoteManager noteManager;
     public float trackWidth;
+    public float damageOnTrap =25;
     public int minLane;
     public int maxLane;
     public int currentLane = 1;
     public bool clone;
     private GameObject NoteLines;
+    public float dupeCooldown = 2;
+    private bool canDupe = true;
     private void Start()
     {
         NoteLines = noteManager.Track2;
@@ -50,7 +53,7 @@ public class PlayerController : MonoBehaviour
         
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if(clone && Input.GetKeyDown(KeyCode.Space))
+        if(clone && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey))
         {
             if (currentLane == minLane)
             {
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Note"))
         {
@@ -97,13 +100,23 @@ public class PlayerController : MonoBehaviour
         }
         if(collision.CompareTag("trap"))
         {
-            ExampleGameManager.health-=25;
+            ExampleGameManager.health-=damageOnTrap;
             //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
         if(collision.CompareTag("DuplicationNote"))
         {
-            NoteLines.SetActive(!NoteLines.activeSelf);
+            if (canDupe)
+            {
+                NoteLines.SetActive(!NoteLines.activeSelf);
+                canDupe = false;
+                Invoke("resetCooldown", dupeCooldown); // after cooldown seconds can interact with dupeNote again
+            }
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
     }
+    private void resetCooldown()
+    {
+        canDupe = true;
+    }
+
 }

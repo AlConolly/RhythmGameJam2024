@@ -11,6 +11,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public static int score = 0;
     public static int missed = 0;
     public static float health = 100;
+    public float damageOnMiss = 10;
     public static event Action<GameState> OnBeforeStateChanged = delegate { };
     public static event Action<GameState> OnAfterStateChanged = delegate { };
     private GameObject pauseMenu;
@@ -28,17 +29,19 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
         songLength =  rhythmEngine.MusicSource.clip.length;
-        
+        InvokeRepeating("IncreaseHealth", 1f, .1f);
         ChangeState(GameState.Starting);
     }
     private void OnEnable()
     {
         OnBeforeStateChanged += unPause;
+        NoteManager.OnMiss += reduceHealth;
         pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu");
         pauseMenu?.SetActive(false);
     }
     private void OnDisable()
     {
+        NoteManager.OnMiss -= reduceHealth;
         OnBeforeStateChanged -= unPause;
     }
 
@@ -69,7 +72,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
                 break;
             case GameState.Win:
                 WinScreen.SetActive(true);
-                scoreText.text = "Hit: " + score + "Missed: " + missed;
+                scoreText.text = "Hit: " + score + "\nMissed: " + missed;
                 Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 rhythmEngine.Pause();
                 break;
@@ -135,8 +138,16 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         if(songTime>songLength)
         {
-            WinScreen.SetActive(true);
+            ChangeState(GameState.Win);
         }
+    }
+    private void reduceHealth()
+    {
+        health -= damageOnMiss;
+    }
+    private void IncreaseHealth()
+    {
+        health += 1;
     }
 }
 
