@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BackGroundMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float startX;
+    public float endX;
+    private ExampleGameManager gameManager;
+    private void Start()
     {
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<ExampleGameManager>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        float xPos = Mathf.Lerp(startX, endX, (float)gameManager.songProgress);
+        transform.position = new Vector2(xPos, transform.position.y);
     }
 }
