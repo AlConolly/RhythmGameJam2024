@@ -10,7 +10,7 @@ using RhythmEngine;
 public class NoteManager : MonoBehaviour
 {
     [SerializeField] private RhythmEngineCore RhythmEngine;
-    [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab;
+    [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab, HoldPrefab;
 
     [Space]
     [SerializeField] private float[] LanePositions = {-2.25f, -0.75f, 0.75f, 2.25f}; // Y positions of the lanes
@@ -104,6 +104,9 @@ public class NoteManager : MonoBehaviour
                 break;
             case NoteType.Duplicate:
                 notePrefab = DuplicationPrefab;
+                break;
+            case NoteType.Hold:
+                notePrefab = HoldPrefab;
                 break;
         }
         var noteTransform = Instantiate(notePrefab, transform);

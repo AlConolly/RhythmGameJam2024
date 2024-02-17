@@ -191,7 +191,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 2
   - Time: 20.625
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 21.75
     Lane: 1
@@ -200,10 +200,10 @@ MonoBehaviour:
     Lane: 0
     noteType: 0
   - Time: 23.625
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 24.625
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 24.75
     Lane: 4
@@ -242,7 +242,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 0
   - Time: 27.625
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 28
     Lane: 3
@@ -254,7 +254,7 @@ MonoBehaviour:
     Lane: 3
     noteType: 0
   - Time: 28.75
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 29
     Lane: 3
@@ -290,7 +290,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 0
   - Time: 31.625
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 31.875
     Lane: 2
@@ -308,7 +308,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 0
   - Time: 32.75
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 33.125
     Lane: 3
@@ -362,7 +362,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 1
   - Time: 35.625
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 35.75
     Lane: 3
@@ -377,7 +377,7 @@ MonoBehaviour:
     Lane: 2
     noteType: 0
   - Time: 36.625
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 36.625
     Lane: 2
@@ -410,7 +410,7 @@ MonoBehaviour:
     Lane: 3
     noteType: 0
   - Time: 39.5
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 39.625
     Lane: 2
@@ -422,7 +422,7 @@ MonoBehaviour:
     Lane: 2
     noteType: 0
   - Time: 40.75
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 40.75
     Lane: 3
@@ -467,7 +467,7 @@ MonoBehaviour:
     Lane: 3
     noteType: 0
   - Time: 43.875
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 44
     Lane: 3
@@ -479,7 +479,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 0
   - Time: 44.625
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 44.75
     Lane: 4
@@ -524,7 +524,7 @@ MonoBehaviour:
     Lane: 4
     noteType: 0
   - Time: 47.75
-    Lane: 1
+    Lane: 0
     noteType: 0
   - Time: 47.875
     Lane: 4
@@ -533,7 +533,7 @@ MonoBehaviour:
     Lane: 3
     noteType: 0
   - Time: 48.75
-    Lane: 0
+    Lane: 1
     noteType: 0
   - Time: 48.875
     Lane: 3

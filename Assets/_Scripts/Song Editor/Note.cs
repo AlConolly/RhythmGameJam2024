@@ -26,5 +26,6 @@ public enum NoteType
 {
     Cheese = 0,
     Obstacle = 1,
-    Duplicate =2
+    Duplicate =2,
+    Hold = 3
 }

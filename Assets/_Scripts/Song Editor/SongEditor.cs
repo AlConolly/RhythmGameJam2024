@@ -22,7 +22,7 @@ namespace RhythmEngine.Examples
         public float BeatSpacing = 1f;
 
         [Space]
-        [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab;
+        [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab, HoldPrefab;
         [SerializeField] private float NoteOnBeatHeight = 0.33f; // The offset from the middle of a beaet to place a note
         [SerializeField] private float[] LanePositions = { -2.25f, -0.75f, 0.75f, 2.25f }; // We need the lane positions to correctly place the notes
 
@@ -123,6 +123,9 @@ namespace RhythmEngine.Examples
                     break;
                 case NoteType.Duplicate:
                     notePrefab = DuplicationPrefab;
+                    break;
+                case NoteType.Hold:
+                    notePrefab = HoldPrefab;
                     break;
             }
             var noteTransform = Instantiate(notePrefab, BeatsParent);

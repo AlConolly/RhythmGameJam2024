@@ -1308,6 +1308,7 @@ MonoBehaviour:
   CheeseNotePrefab: {fileID: 3858487666298991635, guid: 0365443002214c641ab4ea20af50b76a, type: 3}
   ObstaclePrefab: {fileID: 3858487666298991635, guid: 495a57d700b94c84bb86b9d6c67fc49e, type: 3}
   DuplicationPrefab: {fileID: 3858487666298991635, guid: 23681049a8425464787efab2c9126d8a, type: 3}
+  HoldPrefab: {fileID: 3858487666298991635, guid: 8face47aaad2a624087a29c27419495e, type: 3}
   NoteOnBeatHeight: 0
   LanePositions:
   - -1.5
