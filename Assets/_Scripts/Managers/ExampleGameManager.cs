@@ -29,7 +29,6 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
         songLength =  rhythmEngine.MusicSource.clip.length;
-        InvokeRepeating("IncreaseHealth", 1f, .1f);
         ChangeState(GameState.Starting);
     }
     private void OnEnable()
@@ -113,6 +112,8 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         LoseScreen.SetActive(false);
         health = 100;
         score = 0;
+
+
         ChangeState(GameState.Playing);
     }
 
@@ -144,10 +145,6 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     private void reduceHealth()
     {
         health -= damageOnMiss;
-    }
-    private void IncreaseHealth()
-    {
-        health += 1;
     }
 }
 

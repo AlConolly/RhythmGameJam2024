@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             ExampleGameManager.score++;
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
+            ExampleGameManager.health += 2;
             //increase score and health, count hit notes
         }
         if(collision.CompareTag("trap"))
