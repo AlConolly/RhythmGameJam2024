@@ -69,11 +69,21 @@ public class PlayerController : MonoBehaviour
             currentLane--;
             transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
         }
+        else if (Input.GetKeyDown(downKey) && currentLane == minLane)
+        {
+            currentLane += 2;
+            transform.position = new Vector2(transform.position.x, transform.position.y + 2 * trackWidth);
+        }
         //else if (upKey && currentLane < maxLane)
         else if (Input.GetKeyDown(upKey) && currentLane < maxLane)
         {
             currentLane++;
             transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
+        }
+        else if(Input.GetKeyDown(upKey) && currentLane == maxLane)
+        {
+            currentLane -= 2;
+            transform.position = new Vector2(transform.position.x, transform.position.y -2* trackWidth);
         }
     }
 

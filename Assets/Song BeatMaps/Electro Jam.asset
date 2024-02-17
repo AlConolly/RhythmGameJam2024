@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205f63e5372016842aeac60dc398b842, type: 3}
   m_Name: Electro Jam
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 44aa7bca38904c2479e888581dce59c0, type: 3}
+  Clip: {fileID: 8300000, guid: 060d2765910630f429962deb3e2dbee2, type: 3}
   FirstBeatOffset: 0
   Looping: 0
   BaseBpm: 128
