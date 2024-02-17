@@ -22,95 +22,1121 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 806b4eae28e7c904291d4dbb98a1b802, type: 2}
   BeatSequenceChanges: []
   Notes:
-  - Time: 0.5
+  - Time: 0.625
+    Lane: 2
+    noteType: 1
+  - Time: 1.625
     Lane: 4
-    noteType: 0
-  - Time: 0.875
+    noteType: 1
+  - Time: 2.625
     Lane: 3
-    noteType: 0
-  - Time: 1.125
-    Lane: 3
-    noteType: 0
-  - Time: 1.5
+    noteType: 1
+  - Time: 3.625
     Lane: 4
-    noteType: 0
-  - Time: 2.5
-    Lane: 4
-    noteType: 0
-  - Time: 3.5
-    Lane: 4
-    noteType: 0
-  - Time: 4.5
-    Lane: 4
-    noteType: 0
+    noteType: 1
+  - Time: 4.625
+    Lane: 2
+    noteType: 1
   - Time: 5.5
     Lane: 4
+    noteType: 1
+  - Time: 5.875
+    Lane: 3
     noteType: 0
-  - Time: 6.5
+  - Time: 6.125
+    Lane: 3
+    noteType: 0
+  - Time: 6.75
     Lane: 4
     noteType: 0
-  - Time: 7.5
+  - Time: 7
+    Lane: 3
+    noteType: 0
+  - Time: 7.25
     Lane: 4
+    noteType: 0
+  - Time: 7.75
+    Lane: 3
+    noteType: 0
+  - Time: 8
+    Lane: 2
+    noteType: 0
+  - Time: 8.25
+    Lane: 2
     noteType: 0
   - Time: 8.5
+    Lane: 3
+    noteType: 0
+  - Time: 8.875
     Lane: 4
     noteType: 0
-  - Time: 9.5
+  - Time: 9.125
     Lane: 4
     noteType: 0
-  - Time: 10.5
+  - Time: 9.375
     Lane: 4
+    noteType: 0
+  - Time: 9.75
+    Lane: 4
+    noteType: 0
+  - Time: 10
+    Lane: 3
+    noteType: 0
+  - Time: 10.375
+    Lane: 3
+    noteType: 0
+  - Time: 10.625
+    Lane: 3
+    noteType: 0
+  - Time: 10.875
+    Lane: 4
+    noteType: 0
+  - Time: 11.125
+    Lane: 3
     noteType: 0
   - Time: 11.5
+    Lane: 2
+    noteType: 0
+  - Time: 11.875
+    Lane: 2
+    noteType: 0
+  - Time: 12.375
+    Lane: 3
+    noteType: 0
+  - Time: 12.625
     Lane: 4
     noteType: 0
-  - Time: 12.5
+  - Time: 12.875
     Lane: 4
     noteType: 0
-  - Time: 13.5
+  - Time: 13.125
     Lane: 4
     noteType: 0
-  - Time: 14.5
+  - Time: 13.375
     Lane: 4
+    noteType: 0
+  - Time: 13.625
+    Lane: 3
+    noteType: 0
+  - Time: 13.875
+    Lane: 2
+    noteType: 0
+  - Time: 14.25
+    Lane: 2
+    noteType: 0
+  - Time: 14.625
+    Lane: 2
+    noteType: 0
+  - Time: 14.875
+    Lane: 2
+    noteType: 0
+  - Time: 15.25
+    Lane: 2
     noteType: 0
   - Time: 15.5
+    Lane: 3
+    noteType: 0
+  - Time: 15.75
+    Lane: 2
+    noteType: 0
+  - Time: 16.125
+    Lane: 3
+    noteType: 0
+  - Time: 16.375
+    Lane: 3
+    noteType: 0
+  - Time: 16.75
+    Lane: 2
+    noteType: 1
+  - Time: 16.75
+    Lane: 3
+    noteType: 0
+  - Time: 16.75
+    Lane: 4
+    noteType: 1
+  - Time: 17.25
+    Lane: 2
+    noteType: 1
+  - Time: 17.25
+    Lane: 3
+    noteType: 0
+  - Time: 17.25
+    Lane: 4
+    noteType: 1
+  - Time: 17.875
+    Lane: 3
+    noteType: 0
+  - Time: 18.125
+    Lane: 3
+    noteType: 0
+  - Time: 18.375
+    Lane: 3
+    noteType: 0
+  - Time: 18.625
+    Lane: 3
+    noteType: 0
+  - Time: 18.75
+    Lane: 3
+    noteType: 0
+  - Time: 19.25
+    Lane: 3
+    noteType: 0
+  - Time: 19.625
+    Lane: 2
+    noteType: 2
+  - Time: 19.625
+    Lane: 3
+    noteType: 2
+  - Time: 19.625
+    Lane: 4
+    noteType: 2
+  - Time: 20.625
+    Lane: 0
+    noteType: 0
+  - Time: 21.75
+    Lane: 1
+    noteType: 0
+  - Time: 22.75
+    Lane: 0
+    noteType: 0
+  - Time: 23.625
+    Lane: 1
+    noteType: 0
+  - Time: 24.625
+    Lane: 0
+    noteType: 0
+  - Time: 24.75
     Lane: 4
     noteType: 0
-  - Time: 16.5
-    Lane: 4
-    noteType: 0
-  - Time: 17.5
-    Lane: 4
-    noteType: 0
-  - Time: 18.5
-    Lane: 4
-    noteType: 0
-  - Time: 19.5
-    Lane: 4
-    noteType: 0
-  - Time: 20.5
-    Lane: 4
-    noteType: 0
-  - Time: 21.5
-    Lane: 4
-    noteType: 0
-  - Time: 22.5
-    Lane: 4
-    noteType: 0
-  - Time: 23.5
-    Lane: 4
-    noteType: 0
-  - Time: 24.5
+  - Time: 25.125
     Lane: 4
     noteType: 0
   - Time: 25.5
-    Lane: 4
+    Lane: 3
     noteType: 0
-  - Time: 26.5
+  - Time: 25.625
+    Lane: 1
+    noteType: 0
+  - Time: 25.75
+    Lane: 3
+    noteType: 0
+  - Time: 26.25
+    Lane: 2
+    noteType: 1
+  - Time: 26.25
+    Lane: 3
+    noteType: 0
+  - Time: 26.25
     Lane: 4
+    noteType: 1
+  - Time: 26.625
+    Lane: 0
+    noteType: 0
+  - Time: 26.875
+    Lane: 3
+    noteType: 0
+  - Time: 27.125
+    Lane: 3
     noteType: 0
   - Time: 27.5
     Lane: 4
+    noteType: 0
+  - Time: 27.625
+    Lane: 1
+    noteType: 0
+  - Time: 28
+    Lane: 3
+    noteType: 0
+  - Time: 28.25
+    Lane: 3
+    noteType: 0
+  - Time: 28.5
+    Lane: 3
+    noteType: 0
+  - Time: 28.75
+    Lane: 0
+    noteType: 0
+  - Time: 29
+    Lane: 3
+    noteType: 0
+  - Time: 29.5
+    Lane: 3
+    noteType: 0
+  - Time: 29.625
+    Lane: 1
+    noteType: 0
+  - Time: 29.875
+    Lane: 3
+    noteType: 0
+  - Time: 30.125
+    Lane: 3
+    noteType: 0
+  - Time: 30.375
+    Lane: 2
+    noteType: 1
+  - Time: 30.5
+    Lane: 3
+    noteType: 0
+  - Time: 30.625
+    Lane: 0
+    noteType: 0
+  - Time: 30.75
+    Lane: 3
+    noteType: 0
+  - Time: 31.25
+    Lane: 3
+    noteType: 0
+  - Time: 31.5
+    Lane: 4
+    noteType: 0
+  - Time: 31.625
+    Lane: 1
+    noteType: 0
+  - Time: 31.875
+    Lane: 2
+    noteType: 1
+  - Time: 31.875
+    Lane: 3
+    noteType: 0
+  - Time: 32.125
+    Lane: 3
+    noteType: 0
+  - Time: 32.375
+    Lane: 2
+    noteType: 1
+  - Time: 32.375
+    Lane: 4
+    noteType: 0
+  - Time: 32.75
+    Lane: 0
+    noteType: 0
+  - Time: 33.125
+    Lane: 3
+    noteType: 0
+  - Time: 33.375
+    Lane: 3
+    noteType: 0
+  - Time: 33.625
+    Lane: 1
+    noteType: 0
+  - Time: 33.625
+    Lane: 3
+    noteType: 0
+  - Time: 33.875
+    Lane: 4
+    noteType: 0
+  - Time: 34.125
+    Lane: 4
+    noteType: 0
+  - Time: 34.5
+    Lane: 3
+    noteType: 0
+  - Time: 34.625
+    Lane: 0
+    noteType: 0
+  - Time: 34.75
+    Lane: 3
+    noteType: 0
+  - Time: 35
+    Lane: 2
+    noteType: 1
+  - Time: 35
+    Lane: 3
+    noteType: 0
+  - Time: 35
+    Lane: 4
+    noteType: 1
+  - Time: 35.125
+    Lane: 3
+    noteType: 0
+  - Time: 35.25
+    Lane: 3
+    noteType: 0
+  - Time: 35.375
+    Lane: 2
+    noteType: 1
+  - Time: 35.375
+    Lane: 3
+    noteType: 0
+  - Time: 35.375
+    Lane: 4
+    noteType: 1
+  - Time: 35.625
+    Lane: 1
+    noteType: 0
+  - Time: 35.75
+    Lane: 3
+    noteType: 0
+  - Time: 35.875
+    Lane: 3
+    noteType: 0
+  - Time: 36.25
+    Lane: 3
+    noteType: 0
+  - Time: 36.375
+    Lane: 2
+    noteType: 0
+  - Time: 36.625
+    Lane: 0
+    noteType: 0
+  - Time: 36.625
+    Lane: 2
+    noteType: 0
+  - Time: 37
+    Lane: 2
+    noteType: 0
+  - Time: 37.25
+    Lane: 2
+    noteType: 0
+  - Time: 37.625
+    Lane: 1
+    noteType: 0
+  - Time: 37.875
+    Lane: 3
+    noteType: 0
+  - Time: 38.125
+    Lane: 3
+    noteType: 0
+  - Time: 38.375
+    Lane: 3
+    noteType: 0
+  - Time: 38.5
+    Lane: 0
+    noteType: 0
+  - Time: 38.875
+    Lane: 4
+    noteType: 0
+  - Time: 39.25
+    Lane: 3
+    noteType: 0
+  - Time: 39.5
+    Lane: 1
+    noteType: 0
+  - Time: 39.625
+    Lane: 2
+    noteType: 0
+  - Time: 39.875
+    Lane: 2
+    noteType: 0
+  - Time: 40.375
+    Lane: 2
+    noteType: 0
+  - Time: 40.75
+    Lane: 0
+    noteType: 0
+  - Time: 40.75
+    Lane: 3
+    noteType: 0
+  - Time: 41
+    Lane: 3
+    noteType: 0
+  - Time: 41.375
+    Lane: 2
+    noteType: 1
+  - Time: 41.375
+    Lane: 4
+    noteType: 0
+  - Time: 41.625
+    Lane: 4
+    noteType: 0
+  - Time: 41.875
+    Lane: 1
+    noteType: 0
+  - Time: 41.875
+    Lane: 2
+    noteType: 1
+  - Time: 42
+    Lane: 4
+    noteType: 0
+  - Time: 42.5
+    Lane: 3
+    noteType: 0
+  - Time: 42.75
+    Lane: 4
+    noteType: 1
+  - Time: 42.875
+    Lane: 0
+    noteType: 0
+  - Time: 43.25
+    Lane: 3
+    noteType: 0
+  - Time: 43.5
+    Lane: 3
+    noteType: 0
+  - Time: 43.75
+    Lane: 3
+    noteType: 0
+  - Time: 43.875
+    Lane: 1
+    noteType: 0
+  - Time: 44
+    Lane: 3
+    noteType: 0
+  - Time: 44.25
+    Lane: 4
+    noteType: 0
+  - Time: 44.5
+    Lane: 4
+    noteType: 0
+  - Time: 44.625
+    Lane: 0
+    noteType: 0
+  - Time: 44.75
+    Lane: 4
+    noteType: 0
+  - Time: 45.125
+    Lane: 3
+    noteType: 0
+  - Time: 45.25
+    Lane: 2
+    noteType: 1
+  - Time: 45.25
+    Lane: 3
+    noteType: 0
+  - Time: 45.625
+    Lane: 1
+    noteType: 0
+  - Time: 45.75
+    Lane: 3
+    noteType: 0
+  - Time: 46
+    Lane: 2
+    noteType: 0
+  - Time: 46.25
+    Lane: 2
+    noteType: 0
+  - Time: 46.5
+    Lane: 2
+    noteType: 0
+  - Time: 46.75
+    Lane: 0
+    noteType: 0
+  - Time: 46.875
+    Lane: 3
+    noteType: 0
+  - Time: 47
+    Lane: 3
+    noteType: 0
+  - Time: 47.25
+    Lane: 3
+    noteType: 0
+  - Time: 47.625
+    Lane: 4
+    noteType: 0
+  - Time: 47.75
+    Lane: 1
+    noteType: 0
+  - Time: 47.875
+    Lane: 4
+    noteType: 0
+  - Time: 48.5
+    Lane: 3
+    noteType: 0
+  - Time: 48.75
+    Lane: 0
+    noteType: 0
+  - Time: 48.875
+    Lane: 3
+    noteType: 0
+  - Time: 49.125
+    Lane: 3
+    noteType: 0
+  - Time: 49.5
+    Lane: 3
+    noteType: 0
+  - Time: 49.75
+    Lane: 3
+    noteType: 0
+  - Time: 49.875
+    Lane: 1
+    noteType: 0
+  - Time: 50
+    Lane: 0
+    noteType: 2
+  - Time: 50
+    Lane: 1
+    noteType: 2
+  - Time: 50
+    Lane: 2
+    noteType: 2
+  - Time: 50
+    Lane: 3
+    noteType: 2
+  - Time: 50
+    Lane: 4
+    noteType: 2
+  - Time: 51.375
+    Lane: 2
+    noteType: 1
+  - Time: 51.375
+    Lane: 3
+    noteType: 1
+  - Time: 53.625
+    Lane: 2
+    noteType: 1
+  - Time: 54
+    Lane: 2
+    noteType: 1
+  - Time: 54
+    Lane: 4
+    noteType: 1
+  - Time: 54.375
+    Lane: 2
+    noteType: 1
+  - Time: 54.375
+    Lane: 4
+    noteType: 1
+  - Time: 57.375
+    Lane: 2
+    noteType: 1
+  - Time: 57.375
+    Lane: 4
+    noteType: 1
+  - Time: 58.25
+    Lane: 4
+    noteType: 0
+  - Time: 58.625
+    Lane: 3
+    noteType: 0
+  - Time: 59.125
+    Lane: 2
+    noteType: 0
+  - Time: 59.625
+    Lane: 2
+    noteType: 1
+  - Time: 59.625
+    Lane: 4
+    noteType: 0
+  - Time: 60
+    Lane: 2
+    noteType: 1
+  - Time: 60.125
+    Lane: 3
+    noteType: 0
+  - Time: 60.375
+    Lane: 2
+    noteType: 1
+  - Time: 60.375
+    Lane: 3
+    noteType: 0
+  - Time: 60.625
+    Lane: 4
+    noteType: 0
+  - Time: 60.75
+    Lane: 2
+    noteType: 1
+  - Time: 61.125
+    Lane: 2
+    noteType: 1
+  - Time: 61.125
+    Lane: 3
+    noteType: 0
+  - Time: 61.375
+    Lane: 3
+    noteType: 0
+  - Time: 61.5
+    Lane: 2
+    noteType: 1
+  - Time: 61.625
+    Lane: 3
+    noteType: 0
+  - Time: 61.875
+    Lane: 2
+    noteType: 1
+  - Time: 61.875
+    Lane: 3
+    noteType: 0
+  - Time: 62
+    Lane: 4
+    noteType: 0
+  - Time: 62.25
+    Lane: 2
+    noteType: 1
+  - Time: 62.25
+    Lane: 4
+    noteType: 0
+  - Time: 62.625
+    Lane: 2
+    noteType: 1
+  - Time: 62.625
+    Lane: 4
+    noteType: 0
+  - Time: 63
+    Lane: 3
+    noteType: 0
+  - Time: 63.5
+    Lane: 2
+    noteType: 0
+  - Time: 64.125
+    Lane: 2
+    noteType: 1
+  - Time: 64.125
+    Lane: 3
+    noteType: 0
+  - Time: 64.375
+    Lane: 3
+    noteType: 0
+  - Time: 64.5
+    Lane: 2
+    noteType: 1
+  - Time: 64.625
+    Lane: 3
+    noteType: 0
+  - Time: 64.875
+    Lane: 2
+    noteType: 1
+  - Time: 64.875
+    Lane: 4
+    noteType: 0
+  - Time: 65.125
+    Lane: 4
+    noteType: 0
+  - Time: 65.25
+    Lane: 2
+    noteType: 1
+  - Time: 65.375
+    Lane: 4
+    noteType: 0
+  - Time: 65.625
+    Lane: 2
+    noteType: 1
+  - Time: 65.625
+    Lane: 3
+    noteType: 0
+  - Time: 65.875
+    Lane: 3
+    noteType: 0
+  - Time: 66
+    Lane: 2
+    noteType: 1
+  - Time: 66.125
+    Lane: 4
+    noteType: 0
+  - Time: 66.375
+    Lane: 2
+    noteType: 1
+  - Time: 66.375
+    Lane: 4
+    noteType: 0
+  - Time: 67.375
+    Lane: 3
+    noteType: 0
+  - Time: 67.625
+    Lane: 4
+    noteType: 0
+  - Time: 67.875
+    Lane: 3
+    noteType: 0
+  - Time: 68.125
+    Lane: 4
+    noteType: 0
+  - Time: 68.5
+    Lane: 3
+    noteType: 0
+  - Time: 68.75
+    Lane: 3
+    noteType: 0
+  - Time: 69
+    Lane: 3
+    noteType: 0
+  - Time: 69.25
+    Lane: 4
+    noteType: 0
+  - Time: 70.125
+    Lane: 2
+    noteType: 1
+  - Time: 70.125
+    Lane: 3
+    noteType: 0
+  - Time: 70.5
+    Lane: 2
+    noteType: 1
+  - Time: 70.5
+    Lane: 3
+    noteType: 0
+  - Time: 70.875
+    Lane: 2
+    noteType: 1
+  - Time: 70.875
+    Lane: 3
+    noteType: 0
+  - Time: 71.25
+    Lane: 2
+    noteType: 1
+  - Time: 71.25
+    Lane: 3
+    noteType: 0
+  - Time: 71.625
+    Lane: 2
+    noteType: 1
+  - Time: 71.625
+    Lane: 3
+    noteType: 0
+  - Time: 71.875
+    Lane: 2
+    noteType: 1
+  - Time: 71.875
+    Lane: 4
+    noteType: 0
+  - Time: 72.375
+    Lane: 3
+    noteType: 0
+  - Time: 72.625
+    Lane: 4
+    noteType: 0
+  - Time: 72.875
+    Lane: 3
+    noteType: 0
+  - Time: 73.125
+    Lane: 4
+    noteType: 0
+  - Time: 73.375
+    Lane: 3
+    noteType: 0
+  - Time: 73.625
+    Lane: 2
+    noteType: 0
+  - Time: 73.875
+    Lane: 3
+    noteType: 0
+  - Time: 74.125
+    Lane: 3
+    noteType: 0
+  - Time: 74.625
+    Lane: 3
+    noteType: 0
+  - Time: 74.875
+    Lane: 2
+    noteType: 0
+  - Time: 75.125
+    Lane: 3
+    noteType: 0
+  - Time: 75.375
+    Lane: 3
+    noteType: 0
+  - Time: 75.75
+    Lane: 4
+    noteType: 0
+  - Time: 76
+    Lane: 3
+    noteType: 0
+  - Time: 76.25
+    Lane: 3
+    noteType: 0
+  - Time: 77.375
+    Lane: 4
+    noteType: 0
+  - Time: 77.75
+    Lane: 3
+    noteType: 0
+  - Time: 78.125
+    Lane: 4
+    noteType: 0
+  - Time: 78.375
+    Lane: 4
+    noteType: 0
+  - Time: 78.625
+    Lane: 2
+    noteType: 1
+  - Time: 78.625
+    Lane: 4
+    noteType: 0
+  - Time: 79
+    Lane: 3
+    noteType: 0
+  - Time: 79.25
+    Lane: 4
+    noteType: 0
+  - Time: 79.5
+    Lane: 3
+    noteType: 0
+  - Time: 79.75
+    Lane: 4
+    noteType: 0
+  - Time: 80.5
+    Lane: 3
+    noteType: 0
+  - Time: 80.75
+    Lane: 4
+    noteType: 0
+  - Time: 81
+    Lane: 4
+    noteType: 0
+  - Time: 81.375
+    Lane: 4
+    noteType: 0
+  - Time: 81.625
+    Lane: 4
+    noteType: 0
+  - Time: 82.25
+    Lane: 2
+    noteType: 0
+  - Time: 82.5
+    Lane: 2
+    noteType: 0
+  - Time: 82.75
+    Lane: 3
+    noteType: 0
+  - Time: 83
+    Lane: 4
+    noteType: 0
+  - Time: 83.875
+    Lane: 2
+    noteType: 0
+  - Time: 84.25
+    Lane: 3
+    noteType: 0
+  - Time: 84.5
+    Lane: 3
+    noteType: 0
+  - Time: 84.75
+    Lane: 3
+    noteType: 0
+  - Time: 85
+    Lane: 4
+    noteType: 0
+  - Time: 85.25
+    Lane: 4
+    noteType: 0
+  - Time: 85.375
+    Lane: 2
+    noteType: 1
+  - Time: 85.5
+    Lane: 4
+    noteType: 0
+  - Time: 85.75
+    Lane: 3
+    noteType: 0
+  - Time: 86
+    Lane: 2
+    noteType: 0
+  - Time: 86.25
+    Lane: 2
+    noteType: 0
+  - Time: 86.5
+    Lane: 2
+    noteType: 0
+  - Time: 87.125
+    Lane: 2
+    noteType: 0
+  - Time: 87.375
+    Lane: 2
+    noteType: 0
+  - Time: 87.625
+    Lane: 2
+    noteType: 0
+  - Time: 87.875
+    Lane: 2
+    noteType: 0
+  - Time: 88.125
+    Lane: 3
+    noteType: 0
+  - Time: 88.375
+    Lane: 3
+    noteType: 0
+  - Time: 88.625
+    Lane: 3
+    noteType: 0
+  - Time: 88.875
+    Lane: 3
+    noteType: 0
+  - Time: 89
+    Lane: 2
+    noteType: 1
+  - Time: 89
+    Lane: 3
+    noteType: 0
+  - Time: 89
+    Lane: 4
+    noteType: 1
+  - Time: 89.125
+    Lane: 3
+    noteType: 0
+  - Time: 89.25
+    Lane: 2
+    noteType: 1
+  - Time: 89.25
+    Lane: 3
+    noteType: 0
+  - Time: 89.25
+    Lane: 4
+    noteType: 1
+  - Time: 89.75
+    Lane: 3
+    noteType: 0
+  - Time: 90
+    Lane: 4
+    noteType: 0
+  - Time: 90.375
+    Lane: 3
+    noteType: 0
+  - Time: 90.625
+    Lane: 2
+    noteType: 0
+  - Time: 91
+    Lane: 3
+    noteType: 0
+  - Time: 91.25
+    Lane: 3
+    noteType: 0
+  - Time: 91.5
+    Lane: 2
+    noteType: 0
+  - Time: 92.125
+    Lane: 3
+    noteType: 0
+  - Time: 92.375
+    Lane: 4
+    noteType: 0
+  - Time: 93
+    Lane: 3
+    noteType: 0
+  - Time: 93.25
+    Lane: 3
+    noteType: 0
+  - Time: 93.5
+    Lane: 2
+    noteType: 0
+  - Time: 93.75
+    Lane: 3
+    noteType: 0
+  - Time: 94.25
+    Lane: 4
+    noteType: 0
+  - Time: 94.5
+    Lane: 3
+    noteType: 0
+  - Time: 94.75
+    Lane: 4
+    noteType: 0
+  - Time: 95
+    Lane: 3
+    noteType: 0
+  - Time: 95.25
+    Lane: 3
+    noteType: 0
+  - Time: 95.5
+    Lane: 3
+    noteType: 0
+  - Time: 95.875
+    Lane: 2
+    noteType: 0
+  - Time: 96.125
+    Lane: 3
+    noteType: 0
+  - Time: 96.375
+    Lane: 3
+    noteType: 0
+  - Time: 96.625
+    Lane: 4
+    noteType: 0
+  - Time: 96.875
+    Lane: 4
+    noteType: 0
+  - Time: 97.125
+    Lane: 4
+    noteType: 0
+  - Time: 97.375
+    Lane: 3
+    noteType: 0
+  - Time: 97.625
+    Lane: 2
+    noteType: 0
+  - Time: 98.125
+    Lane: 3
+    noteType: 0
+  - Time: 98.375
+    Lane: 3
+    noteType: 0
+  - Time: 98.625
+    Lane: 3
+    noteType: 0
+  - Time: 98.875
+    Lane: 4
+    noteType: 0
+  - Time: 99.125
+    Lane: 4
+    noteType: 0
+  - Time: 99.75
+    Lane: 3
+    noteType: 0
+  - Time: 99.875
+    Lane: 3
+    noteType: 0
+  - Time: 100.125
+    Lane: 3
+    noteType: 0
+  - Time: 100.375
+    Lane: 2
+    noteType: 0
+  - Time: 100.625
+    Lane: 2
+    noteType: 0
+  - Time: 100.875
+    Lane: 2
+    noteType: 0
+  - Time: 101.125
+    Lane: 3
+    noteType: 0
+  - Time: 101.375
+    Lane: 3
+    noteType: 0
+  - Time: 102
+    Lane: 2
+    noteType: 1
+  - Time: 102
+    Lane: 3
+    noteType: 0
+  - Time: 102.25
+    Lane: 2
+    noteType: 1
+  - Time: 102.25
+    Lane: 4
+    noteType: 0
+  - Time: 102.75
+    Lane: 3
+    noteType: 0
+  - Time: 103
+    Lane: 2
+    noteType: 1
+  - Time: 103
+    Lane: 3
+    noteType: 0
+  - Time: 103.375
+    Lane: 2
+    noteType: 1
+  - Time: 103.375
+    Lane: 4
+    noteType: 0
+  - Time: 103.75
+    Lane: 2
+    noteType: 1
+  - Time: 103.75
+    Lane: 3
+    noteType: 0
+  - Time: 104.125
+    Lane: 2
+    noteType: 1
+  - Time: 104.125
+    Lane: 4
+    noteType: 0
+  - Time: 104.625
+    Lane: 2
+    noteType: 1
+  - Time: 104.625
+    Lane: 3
+    noteType: 0
+  - Time: 104.625
+    Lane: 4
+    noteType: 1
+  - Time: 105
+    Lane: 3
+    noteType: 0
+  - Time: 105.25
+    Lane: 3
+    noteType: 0
+  - Time: 105.5
+    Lane: 3
     noteType: 0
   NoteFallTime: 1.5
   PerfectTimeMs: 50
