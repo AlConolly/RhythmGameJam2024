@@ -14,17 +14,14 @@ namespace RhythmEngine.Examples
         {
             NoteLines.SetActive(!NoteLines.activeSelf);
         }
-
-        //for some reason this OnTrigger doesn't work and it angers me
-        /*
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
             {
                 print("player triggered duplication");
-                NoteLines.SetActive(true);
+                NoteLines.SetActive(!NoteLines.activeSelf);
             }
         }
-        */
+        
     }
 }
