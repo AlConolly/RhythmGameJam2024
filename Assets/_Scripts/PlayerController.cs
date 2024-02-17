@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         }
         if(collision.CompareTag("DuplicationNote"))
         {
-            NoteLines.SetActive(true);
+            NoteLines.SetActive(!NoteLines.activeSelf);
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   Clip: {fileID: 8300000, guid: 060d2765910630f429962deb3e2dbee2, type: 3}
   FirstBeatOffset: 0
   Looping: 0
-  BaseBpm: 128
+  BaseBpm: 90
   BpmChanges: []
   BeatSequences:
     BeatSequences:

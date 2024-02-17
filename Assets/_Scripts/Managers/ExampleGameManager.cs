@@ -18,12 +18,17 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public GameObject LoseScreen;
     public GameObject WinScreen;
     public TextMeshProUGUI scoreText;
+    [HideInInspector] public double songLength;
+    [HideInInspector] public double songTime;
+    [HideInInspector] public double songProgress;
     public GameState State { get; private set; }
 
     // Kick the game off with the first state
     void Start()
     {
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
+        songLength =  rhythmEngine.MusicSource.clip.length;
+        
         ChangeState(GameState.Starting);
     }
     private void OnEnable()
@@ -39,6 +44,12 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
 
     private void Update()
     {
+        songTime = rhythmEngine.GetCurrentAudioTime();
+        songProgress = songTime / songLength;
+        print("songProgress: "+songProgress);
+        print("songTime: " + songTime);
+        print("songLength: " + songLength);
+        checkEndSong();
         checkPauseGame();
         if(health<0)
             ChangeState(GameState.Lose);
@@ -122,7 +133,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     }
     private void checkEndSong()
     {
-        if(rhythmEngine.GetCurrentAudioTime()>rhythmEngine.MusicSource.clip.length)
+        if(songTime>songLength)
         {
             WinScreen.SetActive(true);
         }
