@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if(clone && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey))
+        if(clone && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey)))
         {
             if (currentLane == minLane)
             {
