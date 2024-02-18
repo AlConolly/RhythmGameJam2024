@@ -3529,6 +3529,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1709558580}
   TutorialScreen: {fileID: 559598377}
   scoreText: {fileID: 1692271737}
+  ScoreStorer: {fileID: 0}
   levelName: Level1
   songLength: 0
   songTime: 0
@@ -5573,7 +5574,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2063944296}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_MethodName: ReturnToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
