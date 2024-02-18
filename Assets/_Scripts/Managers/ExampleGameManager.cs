@@ -101,6 +101,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public void ResumeGame()
     {
         ChangeState(GameState.Playing);
+        SceneSwitcher.optsWithPause = false;
     }
 
     private void HandleStarting()
