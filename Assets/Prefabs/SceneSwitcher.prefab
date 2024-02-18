@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9861f7a43fc8d3c44bcddb710fdf682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acceptClip: {fileID: 8300000, guid: 8bf9524cb9751b445b966ac03ea52e28, type: 3}
+  declineClip: {fileID: 8300000, guid: a184a3f4a2b3db94484706afc2314f96, type: 3}

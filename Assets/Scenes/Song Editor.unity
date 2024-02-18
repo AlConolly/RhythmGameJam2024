@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RhythmEngine: {fileID: 96801943}
-  SongToEdit: {fileID: 11400000, guid: 2028640a266a211419ca1a7c1931255d, type: 2}
+  SongToEdit: {fileID: 11400000, guid: 59eb5f18b4a97d645b238d1eeb537c0f, type: 2}
   BeatsParent: {fileID: 1310105207}
   MajorBeatPrefab: {fileID: 46678518137551397, guid: 8632acb5c49436c44b77b73133c82c79, type: 3}
   MinorBeatPrefab: {fileID: 832352622585340936, guid: 66b97b33ea8b78d45a3be7da65af3441, type: 3}

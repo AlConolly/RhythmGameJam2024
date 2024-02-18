@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     public static bool optsWithPause = false;
+    public AudioClip acceptClip;
+    public AudioClip declineClip;
+    private AudioSystem au;
+    void Start()
+    {
+        au = GameObject.Find("Audio System").GetComponent<AudioSystem>();
+    }
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -56,5 +63,14 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(levelName);
         optsWithPause = false;
+    }
+
+    public void PlayAcceptSound()
+    {
+        au.PlaySound(acceptClip);
+    }
+    public void PlayDeclineSound()
+    {
+        au.PlaySound(declineClip);
     }
 }

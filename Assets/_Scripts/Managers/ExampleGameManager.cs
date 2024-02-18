@@ -23,6 +23,8 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public GameObject WinScreen;
     public GameObject TutorialScreen;
     public TextMeshProUGUI scoreText;
+    public ScoreStorer ScoreStorer;
+    public string levelName;
     [HideInInspector] public double songLength;
     [HideInInspector] public double songTime;
     [HideInInspector] public double songProgress;
@@ -31,6 +33,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     // Kick the game off with the first state
     void Start()
     {
+        ScoreStorer = GameObject.Find("ScoreStorer").GetComponent<ScoreStorer>();
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
         songStarter = rhythmEngine.GetComponent<SongStarter>();
         songLength = rhythmEngine.MusicSource.clip.length;
@@ -84,6 +87,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
                 scoreText.text = "Hit: " + score + "\nMissed: " + missed;
                 Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 rhythmEngine.Pause();
+                onWin();
                 break;
             case GameState.Lose:
                 print("Lost");
@@ -116,6 +120,11 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public void ExitTutorial()
     {
         ChangeState(GameState.Starting);
+    }
+    public void onWin()
+    {
+        int percentScore = (score / (score + missed))*100;
+        ScoreStorer.SaveScore(levelName, percentScore);
     }
 
     private void HandleStarting()

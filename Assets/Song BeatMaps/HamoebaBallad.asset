@@ -22,18 +22,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 806b4eae28e7c904291d4dbb98a1b802, type: 2}
   BeatSequenceChanges: []
   Notes:
-  - Time: 0
-    Lane: 3
-    noteType: 0
-  - Time: 0.1171875
-    Lane: 3
-    noteType: 3
-  - Time: 0.703125
-    Lane: 3
-    noteType: 0
-  - Time: 0.8203125
-    Lane: 3
-    noteType: 3
   - Time: 1.40625
     Lane: 4
     noteType: 0

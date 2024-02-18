@@ -9,17 +9,23 @@ public class PlayerController : MonoBehaviour
     public RhythmEngineCore rhythmEngine;
     public NoteManager noteManager;
     public float trackWidth;
-    public float damageOnTrap =25;
+    public float damageOnTrap = 25;
     public int minLane;
     public int maxLane;
     public int currentLane = 1;
     public bool clone;
     private GameObject NoteLines;
+    private Vector2 noteLinesEndPos;
+    private Vector2 underScreen = new Vector2(0, -13);
     public float dupeCooldown = 2;
     private bool canDupe = true;
+    public AudioClip trapClip;
+    private AudioSystem au;
     private void Start()
     {
+        au = GameObject.Find("Audio System").GetComponent<AudioSystem>();
         NoteLines = noteManager.Track2;
+        noteLinesEndPos = NoteLines.transform.position;
         gameManager = GameObject.Find("Game Manager").GetComponent<ExampleGameManager>();
     }
     // Update is called once per frame
@@ -45,29 +51,29 @@ public class PlayerController : MonoBehaviour
         KeyCode upKey = KeyCode.W;
         KeyCode downKey = KeyCode.S;
 
-        if(clone)
+        if (clone)
         {
             upKey = KeyCode.UpArrow;
             downKey = KeyCode.DownArrow;
         }
-        
+
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if(clone && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey)))
+        if (clone && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey)))
         {
             if (currentLane == minLane)
             {
                 currentLane++;
                 transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
             }
-            else if(currentLane == maxLane)
+            else if (currentLane == maxLane)
             {
                 currentLane--;
                 transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
             }
-            
+
         }
-        else if(Input.GetKeyDown(downKey) && currentLane > minLane)
+        else if (Input.GetKeyDown(downKey) && currentLane > minLane)
         {
             currentLane--;
             transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
@@ -83,41 +89,77 @@ public class PlayerController : MonoBehaviour
             currentLane++;
             transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
         }
-        else if(Input.GetKeyDown(upKey) && currentLane == maxLane)
+        else if (Input.GetKeyDown(upKey) && currentLane == maxLane)
         {
             currentLane -= 2;
-            transform.position = new Vector2(transform.position.x, transform.position.y -2* trackWidth);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 2 * trackWidth);
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Note"))
+        if (collision.CompareTag("Note"))
         {
             ExampleGameManager.score++;
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
             ExampleGameManager.health += 2;
             //increase score and health, count hit notes
         }
-        if(collision.CompareTag("trap"))
+        if (collision.CompareTag("trap"))
         {
-            ExampleGameManager.health-=damageOnTrap;
+            ExampleGameManager.health -= damageOnTrap;
             //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
-        if(collision.CompareTag("DuplicationNote"))
+        if (collision.CompareTag("DuplicationNote"))
         {
             if (canDupe && !clone)
             {
-                NoteLines.SetActive(!NoteLines.activeSelf);
+                if (NoteLines.activeSelf)
+                {
+                    StartCoroutine(MoveFunction(underScreen));
+                    Invoke("ToggleNoteLines", 2);
+                }
+                else
+                {
+                    NoteLines.SetActive(!NoteLines.activeSelf);
+                    NoteLines.transform.position = new Vector2(0, transform.position.y);
+                    StartCoroutine(MoveFunction(noteLinesEndPos));
+                }
                 canDupe = false;
                 Invoke("resetCooldown", dupeCooldown); // after cooldown seconds can interact with dupeNote again
             }
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("trap"))
+            au.PlaySound(trapClip);
+    }
     private void resetCooldown()
     {
         canDupe = true;
     }
+    private void ToggleNoteLines()
+    {
+        NoteLines.SetActive(!NoteLines.activeSelf);
+    }
+    IEnumerator MoveFunction(Vector2 moveTo)
+    {
+        float timeSinceStarted = 0f;
+        while (true)
+        {
+            timeSinceStarted += Time.deltaTime / 10;
+            NoteLines.transform.position = Vector2.Lerp(NoteLines.transform.position, moveTo, timeSinceStarted);
 
+            // If the object has arrived, stop the coroutine
+            if ((Vector2)NoteLines.transform.position == moveTo)
+            {
+                yield break;
+            }
+
+            // Otherwise, continue next frame
+            yield return null;
+        }
+    }
 }
