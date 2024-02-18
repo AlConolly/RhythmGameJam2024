@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
-{ 
+{
+    public static bool optsWithPause = false;
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -12,12 +13,30 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OptionsMenu()
+    public void OptionsMenu(string whoRanThis)
     {
-        LoadLevel("Options");
+        if (whoRanThis == "pausemenu")
+        {
+            optsWithPause = true;
+        }
+        SceneManager.LoadScene("Options", LoadSceneMode.Additive);
+        
     }
 
-    public void BackToMenu()
+    /// <summary>
+    /// Used in the options menu
+    /// </summary>
+    public void GoBACK()
+    {
+        if (optsWithPause)
+        {
+            // The options menu was opened via the pause menu
+            optsWithPause = false;
+            SceneManager.UnloadSceneAsync("Options");
+        } else LoadLevel("Mainmenu");
+    }
+
+    public void ReturnToMenu()
     {
         LoadLevel("Mainmenu");
     }
@@ -36,5 +55,6 @@ public class SceneSwitcher : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        optsWithPause = false;
     }
 }
