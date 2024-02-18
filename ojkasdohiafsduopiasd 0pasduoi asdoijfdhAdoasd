@@ -1,0 +1,385 @@
+[33mcommit 5513ea059d96878ce17c1a87b7e956c3558b5c00[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sun Feb 18 02:52:46 2024 +0200
+
+    Fix issue #3
+
+[33mcommit 7764f3a3c93737de8b8f2611c98baa52437d6876[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sun Feb 18 02:40:47 2024 +0200
+
+    Fix options menu
+
+[33mcommit 6d9d84feb79d6ecbc2ef651fd6b1a41c00600462[m[33m ([m[1;31morigin/TestingControlSchemes[m[33m)[m
+Merge: 4403741 18726a1
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 15:45:46 2024 -0800
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit 4403741cf5fc378b2ca7c8a8234153bd1780e6ce[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 15:45:42 2024 -0800
+
+    Working on tutorial message(not done yet)
+
+[33mcommit 18726a1c8c5eef432ed754e9931bc7cdc8ff27f9[m
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 16:59:01 2024 -0600
+
+    Electro jam
+    
+    done
+
+[33mcommit fc89e0e2b8b9270ea5065add338e728ec011bb0b[m
+Merge: c22c342 c01a1f8
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 16:30:13 2024 -0600
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit c22c342529c647f77aa712b52e3c02f8a96a06cd[m
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 16:28:29 2024 -0600
+
+    Update Electro Jam.asset
+    
+    update
+
+[33mcommit c01a1f8851981269e7f15d08de83fc8aede60f01[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 14:27:34 2024 -0800
+
+    fixed movement bug
+
+[33mcommit b061ab1e979426d5c5b9e59f540da0669e15ffd5[m
+Merge: bf54283 77f9e16
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 16:24:39 2024 -0600
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit 77f9e162d05a4a5df3e55d4fdea9df2abb520750[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 14:23:12 2024 -0800
+
+    hamoeba regens health slowly
+
+[33mcommit 80604a9e2efdd77a3649e7326c0fd88eff55e47f[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 14:17:24 2024 -0800
+
+    Made font silly and added restart button to pause
+
+[33mcommit 7173bcfd5a1c9f0d517fc0f87b61d5e1c4ac135e[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 14:12:17 2024 -0800
+
+    Working TitleScreen Anim
+
+[33mcommit 5905cc8b5822455181e3f712c604da1ea880eb3b[m
+Merge: 7189daf 94c699c
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 13:15:09 2024 -0800
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit 7189daf1ba64de0e55b59d046a9ab1fb12a6c118[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 13:15:05 2024 -0800
+
+    work on title screen
+
+[33mcommit 94c699c776cd1f02c909851f25a4324266fdf423[m
+Merge: 0c6fc13 c1de6f4
+Author: Blobble183 <huntoscar183@gmail.com>
+Date:   Sat Feb 17 21:13:52 2024 +0000
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit 0c6fc130d02bbee51f19bcc1a4242111fde6aef4[m
+Author: Blobble183 <huntoscar183@gmail.com>
+Date:   Sat Feb 17 21:13:41 2024 +0000
+
+    Beatmaps
+
+[33mcommit bf54283d2bdc1e9da0ed7191c15670be8fc0ddc1[m
+Merge: e80f904 c1de6f4
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 14:26:08 2024 -0600
+
+    Merge branch 'TestingControlSchemes' of https://github.com/AlConolly/RhythmGameJam2024 into TestingControlSchemes
+
+[33mcommit e80f9044ad50f90a39808ce87deba821b8e11f78[m
+Author: thegitterbuds420 <rockzeldabo146676@yahoo.com>
+Date:   Sat Feb 17 14:25:47 2024 -0600
+
+    Update Electro Jam.asset
+    
+    electro jam beat map progress
+
+[33mcommit c1de6f4b0470270bd519a0f49674d6810731cbf5[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 12:24:24 2024 -0800
+
+    BackGround moves, updated lane visuals
+
+[33mcommit b8a66ce20be22ae26b9e167515809d07e692aa29[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 10:24:28 2024 -0800
+
+    player can wrap around bars
+
+[33mcommit dd2230c4db12eb69963d3f466ad0343892e4af19[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 10:16:32 2024 -0800
+
+    Added 2 other songs
+
+[33mcommit 634a8b87cde6bc5e012f2d5585943382338c8924[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 17 10:07:10 2024 -0800
+
+    Added hold notes and new rap song
+
+[33mcommit 5d75794d1affa0379c598d456be32b87d2e1336b[m
+Author: Blobble183 <huntoscar183@gmail.com>
+Date:   Sat Feb 17 15:45:04 2024 +0000
+
+    Charted the first song
+
+[33mcommit e1db317c520d541c5f29606401e117a16595dee5[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 16 16:20:39 2024 -0800
+
+    Plays rap song
+
+[33mcommit 1ee9617a92966c7bbb92273191e9ca7dae9b9f09[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 16 16:05:06 2024 -0800
+
+    up down and space, w s
+
+[33mcommit 0761698dac14bef379c28938095d505ddad731e7[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 16 15:59:44 2024 -0800
+
+    W S Up Down
+
+[33mcommit 7ff66b86cbc31fa25beaa5dd3800032f3fc7d103[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 16 15:51:33 2024 -0800
+
+    controls up down space
+
+[33mcommit 917bfee6f8096f5e70a7df15026bfa01e4dba69f[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Thu Feb 15 18:59:08 2024 -0800
+
+    players now move slightly to the rhythm of the song
+
+[33mcommit df5ae729d1566aca81c43126dff6d3115715c903[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Thu Feb 15 18:31:12 2024 -0800
+
+    Visual changes and win screen should trigger now
+
+[33mcommit a575b8374a7fac580f0653eaefabb6aca2fb7d6e[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Thu Feb 15 19:35:30 2024 +0200
+
+    InputSystem implemented
+
+[33mcommit ec2ca7a97d20cc1bf13621dbc6c141c6a157ce0e[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Thu Feb 15 18:08:22 2024 +0200
+
+    Input System
+
+[33mcommit 0bf1aebfa3299e6065749d9e10a61cb8453eeb3c[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Thu Feb 15 17:40:58 2024 +0200
+
+    The hell are the controlls???
+
+[33mcommit 0121862e74694ff28c5c51ac7b6dd272e7a6bc1c[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Wed Feb 14 13:28:08 2024 -0800
+
+    Visual Changes, fixed small player bug
+    
+    fixed problem where player could move while paused
+
+[33mcommit 3f2fcf8fce4410e256e3e1c8713294b685da301e[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Tue Feb 13 15:29:07 2024 -0800
+
+    Added clone hamster sprite
+
+[33mcommit c2ade19b9feae973bff2a67269763a85c25c40dd[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Tue Feb 13 14:59:04 2024 -0800
+
+    notes are interactable, lose screen appears, added sprites
+
+[33mcommit 8e5881d37127d95acfb69c3303a0006d43dfdb27[m
+Merge: 24a4c1d 6d60f22
+Author: AlConolly <87101932+AlConolly@users.noreply.github.com>
+Date:   Mon Feb 12 19:03:21 2024 -0800
+
+    Merge pull request #4 from AlConolly/BeatMap-Maker
+    
+    Beat map maker
+
+[33mcommit 6d60f225fd1b534dd4fffb9be798caca3edab7db[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sun Feb 11 14:00:42 2024 -0800
+
+    made duplication nodes do something
+    
+    duplication Notes now enable an object when they disappear. It was supposed to make the object appear when touched but I couldn't get it to work
+
+[33mcommit 8ffdf36f479217c36c897fa2928d20f83365a972[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sun Feb 11 12:41:47 2024 -0800
+
+    Added a fifth lane
+
+[33mcommit ea6ee01e2135984e8f073e43122c9aeaf3628a20[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sun Feb 11 10:06:35 2024 -0800
+
+    made duplication notes
+    
+    made another type of note which could be used to trigger hamster duplication
+
+[33mcommit d98c7eb25f2c78c1a27151cd5929b41143f9a866[m[33m ([m[1;31morigin/BeatMap-Maker[m[33m, [m[1;32mbeatmap-maker[m[33m)[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 10 14:51:23 2024 -0800
+
+    added obstacles notes
+
+[33mcommit 8792f549379a7242e329fc228884a4e2201d96d1[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Sat Feb 10 12:42:49 2024 -0800
+
+    made simple songEditor Scene
+
+[33mcommit 24a4c1d3b734ddd8768fef1ac011dc7f50109dca[m[33m ([m[1;31morigin/OptionsMenu-Tabs[m[33m)[m
+Merge: 8793ef7 7966a4d
+Author: AlConolly <87101932+AlConolly@users.noreply.github.com>
+Date:   Sat Feb 10 09:13:13 2024 -0800
+
+    Merge pull request #2 from AlConolly/1-music-is-too-loud
+    
+    1 music is too loud
+
+[33mcommit 7966a4d7e4da343be1038645b1259ee6488a8df0[m[33m ([m[1;31morigin/1-music-is-too-loud[m[33m, [m[1;32m1-music-is-too-loud[m[33m)[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 18:11:54 2024 +0200
+
+    Options inside pausemenu
+
+[33mcommit 6e4a60986216116cbe55ff5982461cd775578b6b[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 18:07:07 2024 +0200
+
+    Volume options
+
+[33mcommit 9b17b989afaa200dad18fb403bfc356df14b6656[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 11:17:02 2024 +0200
+
+    Create an options scene
+
+[33mcommit 8793ef77c12eb931ec44115a586d43bdb33a170b[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 11:03:30 2024 +0200
+
+    Fix 'esc' not entering the pause menu
+
+[33mcommit 038679538473da00f15d7b51ac65d430eda92728[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 10:59:50 2024 +0200
+
+    Fix 'esc' not entering the pause menu
+
+[33mcommit 2bd461edb3a07a694e852d7acf18b6b55d9b5370[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 9 21:25:09 2024 -0800
+
+    Started making Level 1 mechanics
+    
+    Copied and changed some stuff from the Mania Sample of the Rhythm Engine and added it to level 1, then added a very basic player. An example song and beatmap now play in level 1, but the player doesn't interact with notes(cheese) yet.
+
+[33mcommit cc11bb3656e3f6af400cad81428eb2c735d3d292[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 01:16:39 2024 +0200
+
+    Better colors for the eyes
+
+[33mcommit 8affab7f217f60f439b6e68709cf771a09793e21[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 01:11:40 2024 +0200
+
+    Completely demolish maples code
+
+[33mcommit 9e75895df72c4b73155935a96af66b6d362e7b14[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Sat Feb 10 00:34:17 2024 +0200
+
+    Improvements
+
+[33mcommit 2b9c893f05586b2862b59e570b8076ab49777784[m
+Merge: 7181fe2 cea3fbc
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 9 13:58:45 2024 -0800
+
+    Merge branch 'main' of https://github.com/AlConolly/RhythmGameJam2024
+
+[33mcommit 7181fe2cf18cb86aaf888707ab3dc41e6a293887[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 9 13:58:37 2024 -0800
+
+    Added navigation and pausing
+    
+    added navigation with main menu, level select, and pauses the game when escape is pressed
+
+[33mcommit cea3fbc435a3c32ae4d55af0d32207b3bea823f4[m
+Merge: 7d37243 0086c7d
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Fri Feb 9 20:38:38 2024 +0200
+
+    Merge branch 'main' of https://github.com/AlConolly/RhythmGameJam2024
+
+[33mcommit 7d372436f4a590a954d8ae62f1f76482d98d28aa[m
+Author: Zilonis123 <kazaks.karlis2009@gmail.com>
+Date:   Fri Feb 9 20:29:44 2024 +0200
+
+    Remove unneccesarry readme inside assets
+
+[33mcommit 0086c7d9c28c4664c2db38dfe389736aa5942ea4[m
+Author: MapleTwig <conollyallen2@gmail.com>
+Date:   Fri Feb 9 10:13:19 2024 -0800
+
+    Added the rhythm engine demo
+
+[33mcommit 7844ed4b1e89e9273b7717c873a2444c8cf19ee2[m
+Author: KensingtonWatts <99620454+KensingtonWatts@users.noreply.github.com>
+Date:   Fri Feb 2 14:04:20 2024 -0800
+
+    Hello World
+    
+    Is this thing one
+
+[33mcommit ce132fd23d0f3ce6c20e98f73c909b13f49b1596[m
+Author: MapleTwig <eggknocker1@gmail.com>
+Date:   Thu Feb 1 22:16:24 2024 -0800
+
+    Initial Commit
+
+[33mcommit 587107cc5dce8a1c6526015301896440bb577ca9[m
+Author: MapleTwig <eggknocker1@gmail.com>
+Date:   Thu Feb 1 22:05:21 2024 -0800
+
+    Initial commit
