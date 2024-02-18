@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using RhythmEngine;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 /// <summary>
 /// Nice, easy to understand enum-based game manager. For larger and more complex games, look into
@@ -33,7 +32,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     // Kick the game off with the first state
     void Start()
     {
-        ScoreStorer = GameObject.Find("ScoreStorer").GetComponent<ScoreStorer>();
+        //ScoreStorer = GameObject.Find("ScoreStorer").GetComponent<ScoreStorer>();
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
         songStarter = rhythmEngine.GetComponent<SongStarter>();
         songLength = rhythmEngine.MusicSource.clip.length;
@@ -124,7 +123,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public void onWin()
     {
         int percentScore = (score / (score + missed))*100;
-        ScoreStorer.SaveScore(levelName, percentScore);
+        //ScoreStorer.SaveScore(levelName, percentScore);
     }
 
     private void HandleStarting()
