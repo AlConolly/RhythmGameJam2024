@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using RhythmEngine;
 using TMPro;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Nice, easy to understand enum-based game manager. For larger and more complex games, look into
 /// state machines. But this will serve just fine for most games.
@@ -124,12 +126,22 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
 
         Debug.Log(State);
 
+
+        if (SceneSwitcher.optsWithPause)
+        {
+            SceneSwitcher.optsWithPause = false;
+            SceneManager.UnloadSceneAsync("Options");
+            return;
+        }
+
         if (State != GameState.Paused) ChangeState(GameState.Paused);
         else unPause(GameState.Playing);
     }
     private void unPause(GameState gs) // Why are we taking an input??
     {
         if (gs == GameState.Paused) return; // Theoretically this can be removed
+
+        
 
         State = GameState.Playing;
         Time.timeScale = 1;

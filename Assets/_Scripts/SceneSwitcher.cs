@@ -31,6 +31,7 @@ public class SceneSwitcher : MonoBehaviour
         if (optsWithPause)
         {
             // The options menu was opened via the pause menu
+            optsWithPause = false;
             SceneManager.UnloadSceneAsync("Options");
         } else LoadLevel("Mainmenu");
     }
