@@ -14,10 +14,12 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     public float damageOnMiss = 10;
     public static event Action<GameState> OnBeforeStateChanged = delegate { };
     public static event Action<GameState> OnAfterStateChanged = delegate { };
-    private GameObject pauseMenu;
     private RhythmEngineCore rhythmEngine;
+    public SongStarter songStarter;
+    public GameObject pauseMenu;
     public GameObject LoseScreen;
     public GameObject WinScreen;
+    public GameObject TutorialScreen;
     public TextMeshProUGUI scoreText;
     [HideInInspector] public double songLength;
     [HideInInspector] public double songTime;
@@ -28,8 +30,9 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     void Start()
     {
         rhythmEngine = GameObject.FindGameObjectWithTag("RhythmEngine").GetComponent<RhythmEngineCore>();
-        songLength =  rhythmEngine.MusicSource.clip.length;
-        ChangeState(GameState.Starting);
+        songStarter = rhythmEngine.GetComponent<SongStarter>();
+        songLength = rhythmEngine.MusicSource.clip.length;
+        ChangeState(GameState.InTutorial);
     }
     private void OnEnable()
     {
@@ -46,11 +49,11 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
 
     private void Update()
     {
-        songTime = rhythmEngine.GetCurrentAudioTime();
-        songProgress = songTime / songLength;
-        print("songProgress: "+songProgress);
-        print("songTime: " + songTime);
-        print("songLength: " + songLength);
+        if (State != GameState.InTutorial)
+        {
+            songTime = rhythmEngine.GetCurrentAudioTime();
+            songProgress = songTime / songLength;
+        }
         checkEndSong();
         checkPauseGame();
         if(health<0)
@@ -64,6 +67,11 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         State = newState;
         switch (newState)
         {
+            case GameState.InTutorial:
+                TutorialScreen.SetActive(true);
+                Time.timeScale = 0; // Sets the movement of time to 0 in the game
+                rhythmEngine.Pause();
+                break;
             case GameState.Starting:
                 HandleStarting();
                 break;
@@ -102,6 +110,10 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         ChangeState(GameState.Playing);
     }
+    public void ExitTutorial()
+    {
+        ChangeState(GameState.Starting);
+    }
 
     private void HandleStarting()
     {
@@ -110,9 +122,11 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         // Eventually call ChangeState again with your next state
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
+        TutorialScreen.SetActive(false);
         health = 100;
         score = 0;
 
+        songStarter.StartSong();
 
         ChangeState(GameState.Playing);
     }
@@ -128,7 +142,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     }
     private void unPause(GameState gs) // Why are we taking an input??
     {
-        if (gs == GameState.Paused) return; // Theoretically this can be removed
+        if (gs == GameState.Paused || gs == GameState.Starting || gs == GameState.InTutorial) return; // Theoretically this can be removed
 
         State = GameState.Playing;
         Time.timeScale = 1;
@@ -155,4 +169,5 @@ public enum GameState {
     Win = 2,
     Lose = 3,
     Paused = 4,
+    InTutorial = 5
 }

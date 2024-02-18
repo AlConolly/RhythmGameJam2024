@@ -10,6 +10,7 @@ using RhythmEngine;
 public class NoteManager : MonoBehaviour
 {
     [SerializeField] private RhythmEngineCore RhythmEngine;
+    [SerializeField] private SongStarter songStarter;
     [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab, HoldPrefab;
 
     [Space]
@@ -18,8 +19,8 @@ public class NoteManager : MonoBehaviour
     [SerializeField] private float KeysX = -8f;  // X position of the notes when they are meant to be pressed
 
     //TODO: change SimpleManiaSong struct to differenciate between cheese and obstacles
-    private HamoebaSong Song => RhythmEngine.Song as HamoebaSong; // We need to cast the song to our custom type to access the notes, note fall time, etc
-    public float NoteFallTime => Song.NoteFallTime;
+    private HamoebaSong Song; // We need to cast the song to our custom type to access the notes, note fall time, etc
+    public float NoteFallTime;
 
     // Notes that haven't been spawned yet, it's a queue because we only need the access to the first element when spawning new notes
     private Queue<Note> _unspawnedNotes;
@@ -53,6 +54,8 @@ public class NoteManager : MonoBehaviour
 
     private void Awake()
     {
+        Song = songStarter.SongToPlay;
+        NoteFallTime = Song.NoteFallTime;
         _unspawnedNotes = new Queue<Note>(Song.Notes.OrderBy(note => note.Time)); // We order the notes by time so we can spawn them in order
         _spawnedNotes = new List<SpawnedNote>();
         Track2 = Helpers.FindInActiveObjectByTag("secondTrack");

@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         }
         if(collision.CompareTag("DuplicationNote"))
         {
-            if (canDupe)
+            if (canDupe && !clone)
             {
                 NoteLines.SetActive(!NoteLines.activeSelf);
                 canDupe = false;
