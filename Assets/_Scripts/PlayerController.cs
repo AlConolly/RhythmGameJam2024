@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RhythmEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool canDupe = true;
     public AudioClip trapClip;
     private AudioSystem au;
+    public Image hitScreen;
     private void Start()
     {
         au = GameObject.Find("Audio System").GetComponent<AudioSystem>();
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("trap"))
         {
-            ExampleGameManager.health -= damageOnTrap;
+            gotHurt();
             //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
         if (collision.CompareTag("DuplicationNote"))
@@ -130,6 +132,17 @@ public class PlayerController : MonoBehaviour
             }
             noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
+    }
+
+
+    private void gotHurt()
+    {
+        ExampleGameManager.health -= damageOnTrap;
+
+        var color = hitScreen.color;
+        color.a = 1;
+
+        hitScreen.color = color;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
