@@ -107,7 +107,6 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("trap"))
         {
-            ExampleGameManager.health -= damageOnTrap;
             //noteManager.DespawnNote(noteManager.GetClosestNoteToInput(currentLane).Value);
         }
         if (collision.CompareTag("DuplicationNote"))
@@ -134,7 +133,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("trap"))
+        {
             au.PlaySound(trapClip);
+            ExampleGameManager.health -= damageOnTrap;
+        }
     }
     private void resetCooldown()
     {

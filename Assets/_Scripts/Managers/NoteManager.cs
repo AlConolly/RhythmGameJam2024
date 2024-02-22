@@ -157,8 +157,8 @@ public class NoteManager : MonoBehaviour
             if (currentTime > spawnedNote.EndTime + Song.GoodTimeMs / 1000)  
             {
                 notesToRemove.Add(spawnedNote);
-                if(spawnedNote.Note.noteType == NoteType.Cheese || spawnedNote.Note.noteType == NoteType.Hold)
-                    OnMiss?.Invoke();
+                if (spawnedNote.Note.noteType == NoteType.Cheese || spawnedNote.Note.noteType == NoteType.Hold)
+                { OnMiss?.Invoke(); }
                 continue;
             }
 

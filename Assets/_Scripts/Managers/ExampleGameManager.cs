@@ -136,6 +136,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         TutorialScreen.SetActive(false);
         health = 100;
         score = 0;
+        missed = 0;
 
         songStarter.StartSong();
 
