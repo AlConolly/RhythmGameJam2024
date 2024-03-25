@@ -10,10 +10,10 @@ public class SongStarter : MonoBehaviour
     {
         rhythmEngine = GetComponent<RhythmEngineCore>();
         rhythmEngine.SetSong(SongToPlay);
-        rhythmEngine.InitTime();
     }
     public void StartSong()
     {
+        rhythmEngine.InitTime();
         rhythmEngine.Play();
     }
 }

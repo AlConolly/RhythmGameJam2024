@@ -1,7 +1,9 @@
 {
     "name": "RhythmEngineAssembly",
     "rootNamespace": "RhythmEngine",
-    "references": [],
+    "references": [
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

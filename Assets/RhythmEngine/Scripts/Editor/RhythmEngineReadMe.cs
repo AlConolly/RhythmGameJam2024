@@ -28,11 +28,11 @@ namespace RhythmEngine
             {
                 alignment = TextAnchor.MiddleCenter
             };
-            GUILayout.Label("Rhythm Engine 1.1.1", style);
+            GUILayout.Label("Rhythm Engine 1.1.2", style);
             GUILayout.Space(16);
             GUILayout.Label("Thank you for using Rhythm Engine!", style);
             GUILayout.Label("Be sure to check out the documentation for more information on how to use the Rhythm Engine!", style);
-            GUILayout.Label("In case you have any problems or questions, feel free to contact me on Discord @qer24.", style);
+            GUILayout.Label("In case you have any problems or questions, feel free to contact me at qer24@o2.pl.", style);
             style.alignment = TextAnchor.MiddleRight;
             GUILayout.Label("Happy jamming~", style);
             GUILayout.Label("- Arcy", style);

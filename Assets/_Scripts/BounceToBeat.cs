@@ -6,7 +6,7 @@ namespace RhythmEngine.Examples
     /// <summary>
     /// This class bounces the sample text to the beat given by the BeatSequencer.
     /// </summary>
-    public class ManiaSampleTextBounce : MonoBehaviour
+    public class BounceToBeat : MonoBehaviour
     {
         [SerializeField] private BeatSequencer BeatSequencer;
 

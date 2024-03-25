@@ -219,10 +219,10 @@ namespace RhythmEngine
             }
             else
             {
-                height += EditorGUIUtility.singleLineHeight * 4.25f * list.arraySize;
+                height += EditorGUIUtility.singleLineHeight * 5f * list.arraySize;
             }
 
-            height += EditorGUIUtility.singleLineHeight * 4.5f + 2;
+            height += EditorGUIUtility.singleLineHeight * 3f;
 
             return height;
         }

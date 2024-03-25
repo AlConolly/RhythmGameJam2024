@@ -102,6 +102,11 @@ namespace RhythmEngine
         public bool HasStarted => _isPlaying ? GetCurrentAudioTime() >= 0 : _sourceStartTime >= 0;
 
         /// <summary>
+        /// True if the song has ended
+        /// </summary>
+        public bool HasEnded => GetCurrentAudioTime() >= _loopTime;
+
+        /// <summary>
         /// True if the song is not playing
         /// </summary>
         public bool IsPaused => !_isPlaying;

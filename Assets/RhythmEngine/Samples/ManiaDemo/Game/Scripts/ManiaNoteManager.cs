@@ -66,14 +66,19 @@ namespace RhythmEngine.Examples
 
         private void TrySpawningNotes(double currentTime)
         {
-            if (_unspawnedNotes.Count == 0) return;
-
-            // If there's a note left to spawn...
-            var closestUnspawnedNote = _unspawnedNotes.Peek();
-            if (currentTime > closestUnspawnedNote.Time - NoteFallTime) // ...and it's time to spawn it...
+            while (_unspawnedNotes.Count > 0)
             {
-                _unspawnedNotes.Dequeue(); // ...remove it from the queue...
-                SpawnNote(closestUnspawnedNote, currentTime); // ...and spawn it
+                // If there's a note left to spawn...
+                var closestUnspawnedNote = _unspawnedNotes.Peek();
+                if (currentTime > closestUnspawnedNote.Time - NoteFallTime) // ...and it's time to spawn it...
+                {
+                    _unspawnedNotes.Dequeue(); // ...remove it from the queue...
+                    SpawnNote(closestUnspawnedNote, currentTime); // ...and spawn it
+                }
+                else
+                {
+                    break;
+                }
             }
 
             // Note: we spawn the notes {NoteFallTime} seconds before their actual time so they can fall from the top of the screen to the bottom.

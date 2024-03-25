@@ -33,7 +33,6 @@ namespace RhythmEngine.Examples
                 var currentBeat = GetBeatFromWorldPos(worldPos);
 
                 ManiaEditor.ToggleNote(new Vector2Int(currentLane, currentBeat));
-                print(worldPos);
             }
         }
 

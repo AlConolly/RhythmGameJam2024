@@ -27,7 +27,7 @@ namespace RhythmEngine.Examples
             {
                 for (int lane = 0; lane < 4; lane++)
                 {
-                    if (notes[beat, lane])
+                    if (notes[lane, beat])
                     {
                         notesToSave.Add(new SimpleManiaNote
                         {

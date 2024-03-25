@@ -66,7 +66,7 @@ namespace RhythmEngine
 
         private void Update()
         {
-            if (!RhythmEngine.HasStarted) return;
+            if (!RhythmEngine.HasStarted || RhythmEngine.HasEnded) return;
 
             var time = RhythmEngine.GetCurrentAudioTime() - RhythmEngine.Song.FirstBeatOffsetInSec;
             if (_sequenceChangesQueue.Count > 0 && time >= _sequenceChangesQueue.Peek().Time)
@@ -77,11 +77,10 @@ namespace RhythmEngine
                 if (sequenceIndex == -1)
                 {
                     _currentSequence = null;
+                    return;
                 }
-                else
-                {
-                    ChangeActiveSequence(sequenceChange);
-                }
+
+                ChangeActiveSequence(sequenceChange);
             }
 
             if (_currentSequence == null) return;
@@ -89,7 +88,7 @@ namespace RhythmEngine
             var timePassedSinceLastStep = time - _lastStepTime;
             if (timePassedSinceLastStep >= _stepTime)
             {
-                _lastStepTime = time;
+                _lastStepTime += _stepTime;
                 Step();
             }
         }
@@ -126,7 +125,14 @@ namespace RhythmEngine
         {
             var beatsPerSequence = _currentSequence.SequenceLength * 4;
             _stepTime = 60f / RhythmEngine.CurrentBpm / beatsPerSequence;
-            _lastStepTime = sequenceChangeTime ?? RhythmEngine.GetCurrentAudioTime();
+            if (sequenceChangeTime.HasValue)
+            {
+                _lastStepTime = sequenceChangeTime.Value - RhythmEngine.Song.FirstBeatOffsetInSec - _stepTime;
+            }
+            else
+            {
+                _lastStepTime = -_stepTime;
+            }
             _stepCounter = 0;
             _maxStep = _currentSequence.StepCount;
         }

@@ -28,7 +28,7 @@ MonoBehaviour:
     SequenceIndex: 0
   - Time: 36.73
     SequenceIndex: 1
-  - Time: 39.18
+  - Time: 38.8
     SequenceIndex: -1
   Notes:
   - Time: 0.029999999329447746
@@ -37,14 +37,6 @@ MonoBehaviour:
     Lane: 2
   - Time: 0.9483673462682233
     Lane: 1
-  - Time: 1.2544897952478151
-    Lane: 0
-  - Time: 1.2544897952478151
-    Lane: 1
-  - Time: 1.2544897952478151
-    Lane: 2
-  - Time: 1.2544897952478151
-    Lane: 3
   - Time: 1.8667346932069988
     Lane: 3
   - Time: 2.4789795911661825
@@ -247,4 +239,4 @@ MonoBehaviour:
     Lane: 2
   NoteFallTime: 1.5
   PerfectTimeMs: 50
-  GoodTimeMs: 300
+  GoodTimeMs: 100
