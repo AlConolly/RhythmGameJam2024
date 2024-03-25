@@ -60,8 +60,10 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         }
         checkEndSong();
         checkPauseGame();
-        if(health<0)
+        if (health < 0) {
             ChangeState(GameState.Lose);
+            health = 100;
+        }
     }
 
     public void ChangeState(GameState newState)
