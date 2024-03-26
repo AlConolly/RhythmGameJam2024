@@ -85,7 +85,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
                 break;
             case GameState.Win:
                 WinScreen.SetActive(true);
-                scoreText.text = "Hit: " + score + "\nMissed: " + missed;
+                scoreText.text = letterScore((score / (score + missed))) +"\nHit: " + score + "\nMissed: " + missed;
                 Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 rhythmEngine.Pause();
                 onWin();
@@ -183,6 +183,20 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     private void reduceHealth()
     {
         health -= damageOnMiss;
+    }
+    private String letterScore(int hitRate)
+    {
+        if (hitRate >= 1)
+            return "SS";
+        else if (hitRate >= .95)
+            return "S";
+        else if (hitRate >= .90)
+            return "A";
+        else if (hitRate >= .80)
+            return "B";
+        else if (hitRate >= .70)
+            return "C";
+        else return "D";
     }
 }
 

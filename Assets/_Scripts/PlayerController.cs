@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using RhythmEngine;
 using UnityEngine.UI;
-
 public class PlayerController : MonoBehaviour
 {
     public ExampleGameManager gameManager;
@@ -41,57 +40,49 @@ public class PlayerController : MonoBehaviour
         if (gameManager.State == GameState.Paused || gameManager.State == GameState.Win || gameManager.State == GameState.Lose)
             return;
 
-        /*
-        bool upKey = User_Input.instance.MainMoveUp;
-        bool downKey = User_Input.instance.MainMoveDown;
-        if (clone)
-        {
-             upKey = User_Input.instance.CloneMoveUp;
-             downKey = User_Input.instance.CloneMoveDown;
-        }
-        */
         KeyCode upKey = KeyCode.W;
         KeyCode downKey = KeyCode.S;
 
-        if (clone)
-        {
-            upKey = KeyCode.UpArrow;
-            downKey = KeyCode.DownArrow;
-        }
+        bool pressedDown = Input.GetKeyDown(downKey) || touchedQ3();
+        bool pressedUp = Input.GetKeyDown(upKey) || touchedQ1();
+        bool pressedSpace = Input.GetKeyDown(KeyCode.Space) || touchedRightHalf();
 
         //TODO: make keys remappable with the new Unity Input System. This works for now
         //if (downKey && currentLane > minLane)
-        if (clone && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(downKey) || Input.GetKeyDown(upKey)))
+        if (clone)
         {
-            if (currentLane == minLane)
+            if (pressedSpace || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                currentLane++;
-                transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
-            }
-            else if (currentLane == maxLane)
-            {
-                currentLane--;
-                transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
-            }
+                if (currentLane == minLane)
+                {
+                    currentLane++;
+                    transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
+                }
+                else if (currentLane == maxLane)
+                {
+                    currentLane--;
+                    transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
+                }
 
+            }
         }
-        else if (Input.GetKeyDown(downKey) && currentLane > minLane)
+        else if (pressedDown && currentLane > minLane)
         {
             currentLane--;
             transform.position = new Vector2(transform.position.x, transform.position.y - trackWidth);
         }
-        else if (Input.GetKeyDown(downKey) && currentLane == minLane)
+        else if (pressedDown && currentLane == minLane)
         {
             currentLane += 2;
             transform.position = new Vector2(transform.position.x, transform.position.y + 2 * trackWidth);
         }
         //else if (upKey && currentLane < maxLane)
-        else if (Input.GetKeyDown(upKey) && currentLane < maxLane)
+        else if (pressedUp && currentLane < maxLane)
         {
             currentLane++;
             transform.position = new Vector2(transform.position.x, transform.position.y + trackWidth);
         }
-        else if (Input.GetKeyDown(upKey) && currentLane == maxLane)
+        else if (pressedUp && currentLane == maxLane)
         {
             currentLane -= 2;
             transform.position = new Vector2(transform.position.x, transform.position.y - 2 * trackWidth);
@@ -177,4 +168,43 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
     }
+    /// <summary>
+    /// takes pixel coordinates bottom left is (0,0); top right is (pixelWidth,pixelHeight)
+    /// </summary>
+    /// <param name="x1">lower x bound</param>
+    /// <param name="y1">lower y bound</param>
+    /// <param name="x2">upper x bound</param>
+    /// <param name="y2">upper y bound</param>
+    /// <returns>returns true if touch is in specified zone</returns>
+    private bool touchedBound(int x1, int y1, int x2, int y2)
+    {
+        if (Input.touchCount <= 0)
+            return false;
+
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began && touch.position.x > x1 && touch.position.y > y1 && touch.position.x < x2 && touch.position.y < y2)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private bool touchedQ3()
+    {
+        Camera cam = Camera.main;
+        return touchedBound(0, 0, cam.pixelWidth/2-1, cam.pixelHeight/2-1);
+    }
+    private bool touchedQ1()
+    {
+        Camera cam = Camera.main;
+        return touchedBound(0, cam.pixelHeight / 2, cam.pixelWidth/2, cam.pixelHeight);
+    }
+
+    private bool touchedRightHalf()
+    {
+        Camera cam = Camera.main;
+        return touchedBound(cam.pixelWidth / 2, 0, cam.pixelWidth, cam.pixelHeight);
+    }
+
 }
