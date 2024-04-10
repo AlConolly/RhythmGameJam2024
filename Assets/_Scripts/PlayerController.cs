@@ -40,11 +40,9 @@ public class PlayerController : MonoBehaviour
         if (gameManager.State == GameState.Paused || gameManager.State == GameState.Win || gameManager.State == GameState.Lose)
             return;
 
-        KeyCode upKey = KeyCode.W;
-        KeyCode downKey = KeyCode.S;
 
-        bool pressedDown = Input.GetKeyDown(downKey) || touchedQ3();
-        bool pressedUp = Input.GetKeyDown(upKey) || touchedQ1();
+        bool pressedDown = Input.GetKeyDown(KeyCode.W) || touchedQ3();
+        bool pressedUp = Input.GetKeyDown(KeyCode.S) || touchedQ1();
         bool pressedSpace = Input.GetKeyDown(KeyCode.Space) || touchedRightHalf();
 
         //TODO: make keys remappable with the new Unity Input System. This works for now

@@ -12,6 +12,7 @@ public class NoteManager : MonoBehaviour
     [SerializeField] private RhythmEngineCore RhythmEngine;
     [SerializeField] private SongStarter songStarter;
     [SerializeField] private Transform CheeseNotePrefab, ObstaclePrefab, DuplicationPrefab, HoldPrefab;
+    [SerializeField] private float AndroidXNoteStart=25;
 
     [Space]
     [SerializeField] private float[] LanePositions = {-2.25f, -0.75f, 0.75f, 2.25f}; // Y positions of the lanes
@@ -54,6 +55,7 @@ public class NoteManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Application.platform != RuntimePlatform.Android) { SpawnX = AndroidXNoteStart; }
         Song = songStarter.SongToPlay;
         NoteFallTime = Song.NoteFallTime;
         _unspawnedNotes = new Queue<Note>(Song.Notes.OrderBy(note => note.Time)); // We order the notes by time so we can spawn them in order

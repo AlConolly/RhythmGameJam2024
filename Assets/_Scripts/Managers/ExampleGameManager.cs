@@ -85,10 +85,9 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
                 break;
             case GameState.Win:
                 WinScreen.SetActive(true);
-                scoreText.text = letterScore((score / (score + missed))) +"\nHit: " + score + "\nMissed: " + missed;
+                scoreText.text = letterScore((float)score / (score + missed)) +"\nHit: " + score + "\nMissed: " + missed;
                 Time.timeScale = 0; // Sets the movement of time to 0 in the game
                 rhythmEngine.Pause();
-                onWin();
                 break;
             case GameState.Lose:
                 print("Lost");
@@ -118,14 +117,10 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         ChangeState(GameState.Playing);
         SceneSwitcher.optsWithPause = false;
     }
+
     public void ExitTutorial()
     {
         ChangeState(GameState.Starting);
-    }
-    public void onWin()
-    {
-        int percentScore = (score / (score + missed))*100;
-        //ScoreStorer.SaveScore(levelName, percentScore);
     }
 
     private void HandleStarting()
@@ -147,11 +142,11 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
 
     private void checkPauseGame()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape)) return;
-
-        Debug.Log(State);
-
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+            PauseGame();
+    }
+    public void PauseGame()
+    {
         if (SceneSwitcher.optsWithPause)
         {
             SceneSwitcher.optsWithPause = false;
@@ -162,17 +157,20 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
         if (State != GameState.Paused) ChangeState(GameState.Paused);
         else unPause(GameState.Playing);
     }
-    private void unPause(GameState gs) // Why are we taking an input??
+    private void unPause(GameState gs)
     {
         if (gs == GameState.Paused || gs == GameState.Starting || gs == GameState.InTutorial) return; // Theoretically this can be removed
-
-        
 
         State = GameState.Playing;
         Time.timeScale = 1;
         pauseMenu?.SetActive(false);
         rhythmEngine.Unpause();
     }
+    public void unPause() //used by buttons to unPause
+    {
+        unPause(State);
+    }
+
     private void checkEndSong()
     {
         if(songTime>songLength)
@@ -184,7 +182,7 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager>
     {
         health -= damageOnMiss;
     }
-    private String letterScore(int hitRate)
+    private String letterScore(float hitRate)
     {
         if (hitRate >= 1)
             return "SS";
